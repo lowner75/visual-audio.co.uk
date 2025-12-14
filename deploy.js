@@ -28,26 +28,18 @@ async function deploy() {
     await sftp.connect(config);
     console.log("Connected to SFTP server");
 
-    // Upload /dist ...
+    // Upload /dist
     console.log("Uploading /dist ...");
     await sftp.uploadDir(path.resolve("./dist"), process.env.SFTP_DIST_PATH || "/dist");
 
-    // Upload /public/build ...
-    console.log("Uploading /public/build ...");
-    await sftp.uploadDir(path.resolve("./public/build"), process.env.SFTP_BUILD_PATH || "/public/build");
+    // Upload /dist/views
+    console.log("Uploading /dist/views ...");
+    await sftp.uploadDir(path.resolve("./src/views"), process.env.SFTP_VIEWS_PATH || "/dist/views");
 
-    // Upload /public/css ...
-    console.log("Uploading /public/css ...");
-    await sftp.uploadDir(path.resolve("./public/css"), process.env.SFTP_CSS_PATH || "/public/css");
+    // Upload /public
+    console.log("Uploading /public ...");
+    await sftp.uploadDir(path.resolve("./public"), process.env.SFTP_PUBLIC_PATH || "/public");
     
-    // Upload /public/js ...
-    console.log("Uploading /public/js ...");
-    await sftp.uploadDir(path.resolve("./public/js"), process.env.SFTP_JS_PATH || "/public/js");
-    
-    // Upload /src/views if required ...
-    //console.log("Uploading /src/dist/views ...");
-    //await sftp.uploadDir(path.resolve("./dist/views"), process.env.SFTP_VIEWS_PATH || "/views");
-
     console.log("Deployment complete :)");
   } catch (err) {
     console.error("Deployment failed:", err);
