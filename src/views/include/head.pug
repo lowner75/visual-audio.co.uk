@@ -1,0 +1,70 @@
+//- src/views/include/head.pug
+
+head
+
+  //- ========================
+  //- Meta tags
+  //- ========================
+
+  meta(charset="UTF-8")
+  meta(name="viewport" content="width=device-width, initial-scale=1.0")
+  //- Optional IE fallback
+  meta(http-equiv="X-UA-Compatible" content="IE=edge")
+
+  //- ========================
+  //- Page title
+  //- ========================
+
+  title #{pageTitle ? pageTitle + " | Visual Audio" : "Visual Audio"}
+
+  //- ========================
+  //- SEO / Social sharing
+  //- ========================
+
+  meta(name="description" content=pageDescription || "Visual Audio - Lighting, Sound and AV specialists.")
+  meta(property="og:title" content=pageTitle || "Visual Audio")
+  meta(property="og:type" content="website")
+  meta(property="og:url" content=pageURL || "https://visual-audio.co.uk")
+  meta(property="og:image" content=pageImage || "/images/og-image.png")
+  meta(name="twitter:card" content="summary_large_image")
+  meta(name="twitter:title" content=pageTitle || "Visual Audio")
+  meta(name="twitter:description" content=pageDescription || "Visual Audio - Lighting, Sound and AV specialists.")
+  meta(name="twitter:image" content=pageImage || "/images/og-image.png")
+
+  //- ========================
+  //- Favicons / PWA icons
+  //- ========================
+
+  link(rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png")
+  link(rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png")
+  link(rel="icon" href="/favicons/favicon.svg" type="image/svg+xml")
+  link(rel="shortcut icon" href="/favicon.ico")
+  link(rel="apple-touch-icon" href="/favicons/apple-touch-icon.png")
+  link(rel="manifest" href="/favicons/site.webmanifest")
+
+  //- Theme colors for mobile
+  meta(name="theme-color" content="#ffffff")
+  meta(name="msapplication-TileColor" content="#ffffff")
+  meta(name="msapplication-TileImage" content="/favicons/mstile-150x150.png")
+  
+  //- ========================
+  //- Vendor CSS
+  //- ========================
+
+  link(rel="stylesheet" href="/css/vendor/bootstrap.min.css")
+  if vendorCSS
+    each cssFile in vendorCSS
+      link(rel="stylesheet" href=cssFile)
+
+  //- ========================
+  //- Main site styles
+  //- ========================
+
+  link(rel="stylesheet" href="/css/styles.min.css")
+
+  //- ========================
+  //- Analytics
+  //- ========================
+  
+  //- Options: include analytics snippets here
+  //- include google-analytics.pug
