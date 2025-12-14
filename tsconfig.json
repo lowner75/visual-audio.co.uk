@@ -1,0 +1,19 @@
+// tsconfig.json
+
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": false,
+    "moduleResolution": "nodeNext",
+    "module": "NodeNext",
+    "target": "ES2020",
+    "rootDir": "src",
+    "outDir": "dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "lib": ["ES2020", "DOM"],
+    "typeRoots": ["./node_modules/@types", "./src/types"]
+  },
+  "include": ["src"]
+}

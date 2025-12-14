@@ -1,0 +1,79 @@
+# ========================
+# DB
+# ========================
+
+# TBC - example: .mydb/
+
+# ========================
+# OS / IDE / Temp
+# ========================
+
+.DS_Store
+Thumbs.db
+.vscode/
+.VSCodeCounter/
+*.tmp
+*.temp
+
+# ========================
+# Node / Package Managers
+# ========================
+
+node_modules/
+*.tsbuildinfo
+pnpm-lock.yaml
+yarn.lock
+
+# ========================
+# Environment Variables
+# ========================
+
+.env
+.env.local
+.env.*.local
+.env.production
+
+# ========================
+# Logs
+# ========================
+
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+
+# ========================
+# Build / Distribution
+# ========================
+
+dist/
+public/build/
+public/css/
+public/js/
+
+# Ignore generated images but keep originals
+public/images/generated/
+# or if all images are generated:
+# public/images/
+
+# ========================
+# Uploaded / Temporary Files
+# ========================
+
+uploads/
+upload/
+temp/
+
+# ========================
+# Development / Misc
+# ========================
+
+.dev/
+.nginx/
+
+# ========================
+# Optional / Future Fastify Cache
+# ========================
+
+.fastify/
