@@ -1,6 +1,6 @@
-# Fastify + TypeScript Platform
+# Visual Audio (Fastify / TypeScript Platform)
 
-Full-stack **Node.js/Fastify** platform built for **visual-audio.co.uk**.
+Full-stack **Node.js / Fastify** platform built for **visual-audio.co.uk**.
 
 ### 🧬 Architecture
 - Modular file structure  
@@ -28,6 +28,8 @@ root
   |___ public
     |___ css
     |___ images
+    |___ favicons
+    |___ fonts
     |___ js
   |___ scss
     |___ abstracts
@@ -41,12 +43,15 @@ root
     |___ middleware
     |___ modules
       |___ landing
+      |___ products
+      |___ sessions
+      |___ users
     |___ plugins
     |___ types
     |___ utils
     |___ views
-      |___ layouts
       |___ include
+      |___ layouts
 
 ```
 
