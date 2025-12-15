@@ -1,0 +1,24 @@
+//- src/views/main.pug
+
+block variables
+block modals
+
+doctype html
+html(lang='en')
+  head
+    include ../include/legacy-head.pug 
+  body
+    div(id="luxy")
+
+      //- Navigation
+      include ../include/legacy-nav.pug 
+
+      //- Main content
+      main(role="main")
+        block content
+
+      //- Footer
+      include ../include/legacy-footer.pug
+
+      //- Page-specific JS
+      include ../include/legacy-scripts.pug
