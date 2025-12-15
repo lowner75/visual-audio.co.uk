@@ -1,0 +1,23 @@
+// scss/styles/styles-legacy.scss
+
+// Abstracts
+@use 'styles-legacy/abstracts/mixins';
+@use 'styles-legacy/abstracts/utilities';
+
+// Base
+@use 'styles-legacy/base/reset';
+@use 'styles-legacy/base/base';
+@use 'styles-legacy/base/fonts';
+@use 'styles-legacy/base/typograhpy';
+
+// Components
+@use 'styles-legacy/components/carousel';
+@use 'styles-legacy/components/modals';
+@use 'styles-legacy/components/scrollbar';
+
+// Layout
+@use 'styles-legacy/layout/nav';
+@use 'styles-legacy/layout/nav-mobile';
+
+// Pages
+@use 'styles-legacy/pages/landing';
