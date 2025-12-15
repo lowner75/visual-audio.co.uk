@@ -1,5 +1,23 @@
 // scss/styles/styles.scss
 
 // Abstracts
-@use 'abstracts/mixins';
-@use 'abstracts/utilities';
+@use 'styles/abstracts/mixins';
+@use 'styles/abstracts/utilities';
+
+// Base
+@use 'styles/base/reset';
+@use 'styles/base/base';
+@use 'styles/base/fonts';
+@use 'styles/base/typograhpy';
+
+// Components
+@use 'styles/components/carousel';
+@use 'styles/components/modals';
+@use 'styles/components/scrollbar';
+
+// Layout
+@use 'styles/layout/nav';
+@use 'styles/layout/nav-mobile';
+
+// Pages
+@use 'styles/pages/landing';
