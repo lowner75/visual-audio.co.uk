@@ -1,0 +1,92 @@
+// scss/styles/components/_nav.scss
+
+@use '../abstracts/mixins' as *;
+
+.va-nav {
+  @include flex-center-space-between;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-top: 20px;
+  padding: 0 30px;
+  height: 80px;
+  color: #fff;
+
+  &__logo img {
+    width: 46px;
+    margin-right: 1rem;
+  }
+
+  &--logo-text {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    &--active &__link {
+      font-weight: 700;
+    }
+  }
+
+  &__link {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 5px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    position: relative;
+    display: inline-block;
+    padding: 0 30px 20px 30px;
+
+    &:hover {
+      color: #fff;
+
+      &::after {
+        background: #fff;
+        transform: scaleX(1) translate3d(-100%, 0, 0);
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      height: 1px;
+      width: calc(100% - 60px);
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      height: 3px;
+      width: calc(100% - 60px);
+      background: rgba(255, 255, 255, 1);
+      transition: transform 0.6s cubic-bezier(.19, 1, .22, 1);
+      transform: scaleX(0) translate3d(-100%, 0, 0);
+      transform-origin: 0 0 0;
+      will-change: transform;
+    }
+
+    &.is-active::before {
+      height: 3px;
+      background: rgba(255, 255, 255, 1);
+    }
+  }
+}
