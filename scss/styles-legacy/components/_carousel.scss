@@ -1,0 +1,166 @@
+// scss/styles/components/_carousel.scss
+
+.carousel-item {
+
+  // Carousel image overlay
+  .carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/hero-slide-overlay.png);
+  }
+
+  // Carousel content wrapper
+  .carousel-content-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(5, 56, 109, 0.03);
+    z-index: 500;
+    text-align: center;
+  
+    // Carousel text wrapper
+    .carousel-text-wrapper {
+      width: 1200px;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+  
+    // Carousel content
+    .carousel-content {
+      width: 100%;
+      margin: 60px auto 0 auto;
+      color: #fff;
+      z-index: 100;
+      transition: transform 0.3s ease-out;
+      text-align: center;
+      @media (max-width: 960px) {
+        margin-top: 20px;
+      }
+    }
+
+    // Carousel image
+    img {
+      animation: imgZoom 6s 1;
+      overflow: hidden;
+      filter: brightness(90%);
+    }
+
+    // Carousel header
+    .carousel-header {
+      font-family: 'Playfair Display', sans-serif;
+      font-size: 75px;
+      font-weight: 100;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      padding-top: 0;
+      padding-bottom: 10px;
+      text-shadow: 0 0 10px rgba(42, 55, 75, 0.5);
+      animation: animateText 3s 1;
+      @media (max-width: 650px) {
+        font-size: 50px;
+      }
+    }
+
+    // Carousel text
+    .carousel-text {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 200;
+      font-size: 30px;
+      line-height: 1.2;
+      animation: animateText 2s 1;
+      animation-delay: 0.1s;
+      max-width: 90%;
+      margin: 10px auto 0 auto;
+      @media (max-width: 650px) {
+        margin-top: 10px;
+        font-size: 24px;
+      }
+    }
+
+  }      
+
+}
+
+.carousel-arrow {
+  position: absolute;
+  display: block;
+  bottom: 50px;
+  left: calc(50% - 22px);
+  z-index: 1000;
+  opacity: 0.5;
+  transition: all 1s cubic-bezier(.19, 1, .22, 1);
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  font-size: 11px;
+  @media (max-width: 650px) {
+    bottom: 40px;
+  }
+  &:hover {
+    transform: translate3d(0, 0px, 0);
+    opacity: 1;
+  }
+}
+
+.carousel-control-prev img {
+  width: 25px;
+  margin-left: 30px;
+  animation: animateChevronPrev 5s infinite;
+  animation-timing-function: ease-in;
+  @media (max-width: 650px) {
+    margin-left: 10px;
+  }    
+}      
+
+.carousel-control-next img {
+  width: 25px;
+  margin-right: 30px;
+  animation: animateChevronNext 5s infinite;
+  animation-timing-function: ease-in;
+  @media (max-width: 650px) {
+    margin-right: 10px;
+  }
+}
+
+// Carousel animation - image zoom
+@keyframes imgZoom {
+  0%   { transform: scale(1.2); }
+  15%  { transform: scale(1.2); }
+  100% { transform: scale(1.0); }
+}
+
+// Carousel animation - text slide in
+@keyframes animateText {
+  0%   { transform: translate3d(-200px, 0, 0); opacity: 0; }
+  45%  { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); opacity: 1; }
+}
+
+// Carousel animation - chevrons
+@keyframes animateChevronPrev {
+  0%   { transform: translate3d(0, 0, 0); }
+  30%  { transform: translate3d(0, 0, 0); }
+  45%  { transform: translate3d(0, 0, 0); opacity: 0; }
+  50%  { transform: translate3d(20px, 0, 0); opacity: 1; }
+  55%  { transform: translate3d(0, 0, 0); opacity: 0.5; }
+  60%  { transform: translate3d(15px, 0, 0); opacity: 1; }
+  65%  { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes animateChevronNext {
+  0%   { transform: translate3d(0, 0, 0); }
+  30%  { transform: translate3d(0, 0, 0); }
+  45%  { transform: translate3d(0, 0, 0); opacity: 0; }
+  50%  { transform: translate3d(-20px, 0, 0); opacity: 1; }
+  55%  { transform: translate3d(0, 0, 0); opacity: 0.5; }
+  60%  { transform: translate3d(-15px, 0, 0); opacity: 1; }
+  65%  { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
