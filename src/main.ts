@@ -1,4 +1,4 @@
-// src/main.js
+// src/main.ts
 
 "use strict";
 
