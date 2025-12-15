@@ -1,0 +1,23 @@
+// abstracts/_mixins.scss
+
+@mixin flex-center(
+  $direction: row,
+  $align: center,
+  $justify: center
+) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin flex-center-space-between(
+  $direction: row,
+  $align: center,
+  $justify: space-between
+) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
