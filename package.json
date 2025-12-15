@@ -7,12 +7,12 @@
   "author": "Bryan Lown",
   "scripts": {
     "server": "ts-node-dev src/server.ts",
-    "sass:watch": "sass --watch scss/styles.scss:public/css/styles.min.css --style=compressed",
+    "sass:watch": "sass --watch scss/styles-legacy.scss:public/css/styles-legacy.min.css --style=compressed",
     "vite:build": "vite build",
-    "esbuild:dev": "esbuild src/main.js --bundle --outdir=public/js --watch",
+    "esbuild:dev": "esbuild src/main.ts --bundle --outdir=public/js --watch",
     "dev": "concurrently \"npm run server\" \"npm run esbuild:dev\" \"npm run sass:watch\"",
     "build:server": "tsc --project tsconfig.json",
-    "build:client": "vite build && sass scss/styles.scss:public/css/styles.min.css --style=compressed",
+    "build:client": "vite build && sass scss/styles-legacy.scss:public/css/styles-legacy.min.css --style=compressed",
     "build": "cross-env NODE_ENV=production npm run build:server && npm run build:client",
     "start": "cross-env NODE_ENV=production node dist/server.js"
   },
