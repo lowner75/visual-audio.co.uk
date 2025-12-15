@@ -1,0 +1,49 @@
+//- src/views/include/nav.pug
+
+#mm-wrapper
+  #mm-bg-1
+  #mm-bg-2
+    #mmenu.flex(style='justify-content: flex-start')
+      ul(style="list-style-type: none")
+        li.mmenu-link
+          a#mmenu-link-home(href='#home') Home
+        li.mmenu-link
+          a#mmenu-link-about(href='#about') About
+        li.mmenu-link
+          a#mmenu-link-services(href='#services') Services
+        li.mmenu-link
+          a#mmenu-link-work(href='#work') Work
+        li.mmenu-link
+          a#mmenu-link-terms(href="/terms-and-conditions") Terms &amp; Conditions
+        li.mmenu-link
+          a#mmenu-link-contact(href='#contact') Contact
+
+nav.va-nav.container
+  .va-nav__logo
+    a.va-nav--logo-text(href="/") 
+      img(src="/images/logo.png" alt="Visual Audio Logo")
+      span(style='opacity: 0.5') VISUAL
+      span AUDIO
+      
+  ul.va-nav__list
+    li.va-nav__item
+      a.va-nav__link(href="#home") Home
+    li.va-nav__item
+      a.va-nav__link(href="#about") About
+    li.va-nav__item
+      a.va-nav__link(href="#services") Services
+    li.va-nav__item
+      a.va-nav__link(href="#work") Work
+    li.va-nav__item
+      a.va-nav__link(href="/terms-and-conditions") Terms
+    li.va-nav__item
+      a.va-nav__link(href="#contact") Contact
+
+.header-background
+
+.menu-wrapper-outer
+  .menu-wrapper-inner
+    .wrapper-menu
+      .line-menu.half.start
+      .line-menu
+      .line-menu.half.end
