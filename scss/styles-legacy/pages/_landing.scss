@@ -1,0 +1,68 @@
+// scss/styles/pages/_landing.scss
+
+// Landing page intro styles
+.landing-intro {
+  position: relative;
+  width: 100%;
+  text-align: center;
+
+  h2 {
+    font-weight: 300;
+    font-size: 38px;
+    line-height: 1.4;
+    margin-bottom: 50px;
+
+    @media (max-width: 650px) {
+      font-size: 24px;
+    }
+  }
+
+  &__content {
+      width: 1300px;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 75px 24px;
+
+      @media (max-width: 960px) {
+        padding: 50px 24px;
+      }
+  }
+
+  &__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 50px;
+      margin: auto;
+      width: 1300px;
+      max-width: 100%;
+
+      &--item {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        margin: 0 auto;
+        max-width: 900px;
+
+        @media (max-width: 960px) {
+          max-width: 100%;
+          text-align: center;
+          margin: 0 auto;
+          padding: 0 60px;
+        }
+            
+        @media (max-width: 650px) {
+          padding: 0 20px;
+        }
+
+      }
+
+      @media (max-width: 960px) {
+        grid-template-columns: 1fr;
+      }
+
+
+  }
+}
+
+// Landing page about styles
