@@ -48,7 +48,7 @@ block content
                   .carousel-header(style="text-shadow: 0 0 10px rgba(0,0,0,0.5)") Lighting. Sound. Audio Visual.
                   .carousel-text We provide a <strong>single port of call</strong> for everything AV.
           .carousel-item(style="width: 100%; height: 100vh; background-color: #20202f")
-            img(src="images/hero-slide-03.jpg" style="object-fit: cover; object-position: 45% 100%; width: 100%; height: 100%")
+            img(src="images/legacy/hero-slide-03.jpg" style="object-fit: cover; object-position: 45% 100%; width: 100%; height: 100%")
             .carousel-overlay
             .carousel-content-wrapper.flex-center
               .carousel-text-wrapper
@@ -56,7 +56,7 @@ block content
                   .carousel-header(style="text-shadow: 0 0 10px rgba(0,0,0,0.5)") Tailored Private Functions.
                   .carousel-text We create <strong>magical moments</strong>
           .carousel-item(id="carousel-video" style="width: 100%; height: 100vh; background-color: #20202f")
-            video(id="video-splash" width="100%" height="100%" autoplay loop muted playsinline style="object-fit: cover" poster="images/legacy/legacy/legacy/videos/5g-video-placeholder.jpg") 
+            video(id="video-splash" width="100%" height="100%" autoplay loop muted playsinline style="object-fit: cover" poster="images/legacy/videos/5g-video-placeholder.jpg") 
               source(src="images/legacy/videos/5g-video.mp4" type="video/mp4")
             .carousel-overlay
             .carousel-content-wrapper.flex-center
@@ -73,7 +73,7 @@ block content
       //- Intro Section
       //- -----------------------
 
-      .landing-intro.container
+      section.landing-intro
         .landing-intro__content
           .landing-intro__grid
             .landing-intro__grid--item
@@ -87,20 +87,18 @@ block content
       //- Intro Section
       //- -----------------------
 
-      .landing-about.container
+      section.landing-about
 
-        a#about.anchor(style='position: absolute; margin-top: -60px')
-        .content-wrapper(style='background: #efefef; margin-top: 120px; padding-top: 50px')
-          .content(style='text-align: center; max-width: 100%')
-            .fp-about-grid
-              #fp-about.fp-about-grid-item
-                .fp-about-grid-image
-                  div(style='margin-top: -250px')
-                    img.about-logo(src='img/logo-2.jpg' style='display: inline-block')
-              .fp-about-grid-item
-                div
-                  h2(style='padding: 10px 0 10px 0') About Us
-                div(style='max-width: 100%; margin: 40px 0 0 0;')
+        a#landing-about.anchor
+        .landing-about__content
+          .landing-about__grid
+            .landing-about__grid--item
+              .landing-about__grid--image
+                img(src='images/legacy/about.jpg')
+            .landing-about__grid--item
+              .landing-about__grid--text
+                h3 About Us
+                div(style='max-width: 100%; margin: 40px 0 0 0')
                   p With over 30 years combined experience, we produce meaningful shows and events that people never forget. We unite culture with the consumer, pushing boundaries to produce incredible spectacles which have our trademark Visual Audio &lsquo;wow factor&rsquo;.
                   p Visual Audio is a complete team of project managers, designers and technicians based in London, providing a one company, one port of call service for all of our customers  technical requirements.
                   p We offer everything from lighting and sound design, to production management and equipment hire, working with fashion shows, night clubs, conferences, art installations, live performances, as well as theatre and concert halls, to name but a few.
