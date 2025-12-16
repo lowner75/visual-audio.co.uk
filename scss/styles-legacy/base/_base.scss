@@ -18,4 +18,10 @@ body {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.75;
+}
+
+.anchor {
+  position: absolute;
+  margin-top: -60px;
 }
