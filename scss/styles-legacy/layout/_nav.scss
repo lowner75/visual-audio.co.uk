@@ -13,10 +13,23 @@
   padding: 0 30px;
   height: 80px;
   color: #fff;
+  
+  // Mobile / tablet 
+  @media (max-width: 960px) {
+    margin-top: 0px;
+    padding: 0 15px;
+  }
 
   &__logo img {
     width: 46px;
     margin-right: 1rem;
+
+    // Mobile / tablet 
+    @media (max-width: 960px) {
+      width: 40px;
+      margin-right: 0.5rem;
+    }
+
   }
 
   &--logo-text {
@@ -32,6 +45,12 @@
     display: flex;
     margin: 0;
     padding: 0;
+
+    // Hide menu on mobile / tablet 
+    @media (max-width: 960px) {
+      display: none;
+    }
+
   }
 
   &__item {
