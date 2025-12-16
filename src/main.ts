@@ -3,6 +3,7 @@
 "use strict";
 
 import luxy from "luxy.js";
+import "./modules/legacy/main"
 
 document.addEventListener("DOMContentLoaded", () => {
 
