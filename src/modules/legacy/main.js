@@ -24,7 +24,7 @@ $(() => {
 				pageAnimationsComplete = true;
 			}
 		});
-		gsap.fromTo('.wrapper-menu', { y: 100, autoAlpha: 0.25 }, { delay: 1.2, duration: 1.75, y: 0, autoAlpha: 1, ease: "Expo.easeInOut" } );
+		gsap.fromTo('.hamburger', { y: 100, autoAlpha: 0.25 }, { delay: 1.2, duration: 1.75, y: 0, autoAlpha: 1, ease: "Expo.easeInOut" } );
 		gsap.to('#transition-page-base-2', { delay: 0, duration: 1.7, y: "-100%", ease: "Expo.easeInOut", onComplete: function() {
 				$('html').css('overflow-y', 'auto');
 				gsap.to('#transition-page-base-2', { duration: 0.5, opacity: 0, onComplete: function() {
@@ -62,7 +62,7 @@ $(() => {
 	       // Down scroll code - hide header...
 				 if(scrollDirection != "down" && navOpen !== true) {
 					 gsap.to('#header', { duration: 1, y: -170, ease: "Expo.easeInOut" } );
-					 gsap.to('.wrapper-menu', { duration: 1, y: -170, ease: "Expo.easeInOut" } );
+					 gsap.to('.hamburger', { duration: 1, y: -170, ease: "Expo.easeInOut" } );
 					 gsap.to('.header-background', { duration: 1, y: -170, ease: "Expo.easeInOut" } );
 				 }
 				 scrollDirection = "down";
@@ -70,7 +70,7 @@ $(() => {
 	      // Up scroll code - show header ...
 				if(scrollDirection != "up" && navOpen !== true) {
 					gsap.to('#header', { duration: 1, y: 0, ease: "Power4.easeOut" } );
-					gsap.to('.wrapper-menu', { duration: 1, y: 0, ease: "Power4.easeOut" } );
+					gsap.to('.hamburger', { duration: 1, y: 0, ease: "Power4.easeOut" } );
 					gsap.to('.header-background', { duration: 1, y: 0, ease: "Power4.easeOut" } );
 				}
 				scrollDirection = "up";
@@ -80,14 +80,14 @@ $(() => {
 
 	// Mobile menu animations ...
 	var navOpen = false;
-	var wrapperMenu = document.querySelector('.wrapper-menu');
+	var wrapperMenu = document.querySelector('.hamburger');
 
 	wrapperMenu.addEventListener('click', function() {
-		$('.wrapper-menu').toggleClass('open');
+		$('.hamburger').toggleClass('open');
 		if(navOpen === true) {
 
 			// Close mobile nav ...
-			gsap.to('.wrapper-menu', { duration: 0.2, transform: "rotate(0deg)" } );
+			gsap.to('.hamburger', { duration: 0.2, transform: "rotate(0deg)" } );
 			if(window.pageYOffset > 500) { gsap.to('.header-background', { delay: 0.5, duration: 0.5, autoAlpha: 1 } ); }
 			gsap.to('#mm-bg-1', { delay: 0.1, duration: 1, x: 0, ease: "Expo.easeInOut" });
 			gsap.to('#mm-bg-2', { duration: 1, x: 0, ease: "Expo.easeInOut" });
@@ -97,7 +97,7 @@ $(() => {
 
 			// Open mobile nav ...
 			var width = -(window.innerWidth);
-			gsap.to('.wrapper-menu', { duration: 0.2, transform: "rotate(-45deg)" } );
+			gsap.to('.hamburger', { duration: 0.2, transform: "rotate(-45deg)" } );
 			gsap.to('.header-background', { delay: 0.5, duration: 0.5, autoAlpha: 0 } );
 			gsap.to('#mm-bg-1', { duration: 1, x: width, ease: "Expo.easeInOut" });
 			gsap.to('#mm-bg-2', { delay: 0.1, duration: 1, x: width, ease: "Expo.easeInOut" });
@@ -116,9 +116,9 @@ $(() => {
 				gsap.fromTo('#'+link, 1, { autoAlpha: 1, x: 0 }, { autoAlpha: 0, x: 0, ease: "power4.out", onComplete: function() {
 					linkCount += 1;
 					if(linkCount === totalLinks) {
-						$('.wrapper-menu').trigger('click');
+						$('.hamburger').trigger('click');
 						gsap.to('#header', { delay: 1, duration: 1, y: -170, ease: "Expo.easeInOut" } );
-	 					gsap.to('.wrapper-menu', { delay: 1, duration: 1, y: -170, ease: "Expo.easeInOut" } );
+	 					gsap.to('.hamburger', { delay: 1, duration: 1, y: -170, ease: "Expo.easeInOut" } );
 	 					gsap.to('.header-background', { delay: 1, duration: 1, y: -170, ease: "Expo.easeInOut" } );
 					}
 				}});
