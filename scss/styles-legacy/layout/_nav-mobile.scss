@@ -1,67 +1,67 @@
 // scss/layout/_nav-mobile.scss
 
 #mm-bg-1 {
-    position: fixed;
-    top: 0;
-    left: 100vw;
-    height: 100%;
-    width: 100%;
-    background-color: #8e919f;
-    z-index: 1400;
+  position: fixed;
+  top: 0;
+  left: 100vw;
+  height: 100%;
+  width: 100%;
+  background-color: #8e919f;
+  z-index: 1400;
 }
 
 #mm-bg-2 {
-    position: fixed;
-    top: 0;
-    left: 100vw;
-    height: 100%;
-    width: 100%;
-    background-color: #1e233f;
-    z-index: 1400;
+  position: fixed;
+  top: 0;
+  left: 100vw;
+  height: 100%;
+  width: 100%;
+  background-color: #1e233f;
+  z-index: 1400;
 }
 
 #mmenu {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: left;
-    padding: 0 100px;
-    color: #fff;
-    font-family: 'Playfair Display', serif;
-    font-size: 40px;
-    font-weight: 200;
-    text-transform: capitalize;
-    background: rgba(255, 255, 255, 0.05);
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  padding: 0 100px;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 200;
+  text-transform: capitalize;
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
 }
 
 @media(max-width: 650px) {
-    #mmenu {
-        padding: 0 20px;
-        font-size: 36px;
-    }
+  #mmenu {
+    padding: 0 20px;
+    font-size: 36px;
+  }
 }
 
 #mmenu ul {
-    width: 100%;
+  width: 100%;
 }
 
 #mmenu ul li {
-    position: relative;
-    width: 100%;
-    margin: 0;
-    padding: 0px 20px 10px 20px;
-    line-height: 1.5;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0px 20px 10px 20px;
+  line-height: 1.5;
 }
 
 #mmenu ul li a {
-    display: block;
-    color: #d2d3d9;
-    color: rgba(255, 255, 255, 0.7);
+  display: block;
+  color: #d2d3d9;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 #mmenu ul li a:hover {
-    color: #fff;
+  color: #fff;
 }
 
 #mmenu ul li::before {
@@ -96,4 +96,3 @@
     transform-origin: 0 0;
     will-change: transform;
 }
-
