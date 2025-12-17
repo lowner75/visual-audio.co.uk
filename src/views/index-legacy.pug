@@ -15,17 +15,6 @@ block content
   #transition-wipe-2
 
   //- -----------------------
-  //- Modal(s)
-  //- -----------------------
-
-  .va-modal.va-modal--contact-error
-    .va-modal__content
-      .va-modal__header Visual Audio: Contact Form Error
-      .va-modal__body Please complete all of the required fields to submit a contact request.
-      .va-modal__footer
-        button.btn-va-modal.btn-va-modal--primary Confirm
-
-  //- -----------------------
   //- Landing page content
   //- -----------------------
 
@@ -278,3 +267,16 @@ block content
               a(data-fancybox='nike-gallery' href='images/legacy/portfolio/fancybox/nike-03.jpg')
                 .work-image-icon
                 img(src='images/legacy/portfolio/nike-03.jpg' style='max-width: 100%')
+
+block modals
+
+  //- -----------------------
+  //- Modal(s)
+  //- -----------------------
+
+  .va-modal.va-modal--contact-form
+    .va-modal__content
+      .va-modal__header Visual Audio: Contact Us
+      .va-modal__body Thank you for getting in touch. We have received your message and will get back to you as soon as possible.
+      .va-modal__footer
+        button.btn.btn-va-modal.btn-va-modal--secondary Close
