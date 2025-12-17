@@ -3,11 +3,11 @@
 // Hamburger
 .hamburger-wrapper-outer {
   position: absolute;
-  z-index: 2500;
+  z-index: 2000;
   top: 67px;
   margin: 0 auto;
   width: 100%;
-  display: inline-block;
+  display: none;
   text-align: right;
   transition: all 0.5s;
   
