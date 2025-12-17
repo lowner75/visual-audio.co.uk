@@ -3,7 +3,8 @@
 "use strict";
 
 import luxy from "luxy.js";
-import "./modules/legacy/main"
+import "./modules/legacy/main";
+import initMessagesModule from "./modules/messages/messages";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -18,5 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.warn("Luxy failed to initialize:", err);
     }
   }
+
+  initMessagesModule();
 
 });
