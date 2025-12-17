@@ -9,8 +9,8 @@ export interface IMessage extends Document {
   email: string;
   message: string;
   source?: string;
-  ip_address?: string;
-  user_agent?: string;
+  ipAddress?: string;
+  userAgent?: string;
   createdAt?: Date;
   updatedAt?: Date;
 }
@@ -23,8 +23,8 @@ const MessageSchema: Schema = new Schema<IMessage>(
     email: { type: String, required: true },
     message: { type: String, required: true },
     source: { type: String },
-    ip_address: { type: String },
-    user_agent: { type: String },
+    ipAddress: { type: String },
+    userAgent: { type: String },
   },
   { timestamps: true } // this adds createdAt and updatedAt automatically
 );
