@@ -269,31 +269,4 @@ $(() => {
 	} // End minimum background size array function
 	minBackgroundSizes();
 
-	// Contact form handler
-	$('#new_message').on("click", (e)=> {
-		if($('input[name="first_name"]').val() == '' || $('input[name="last_name"]').val() == '' || $('input[name="telephone"]').val() == '' || $('input[name="email"]').val() == '' || $('textarea[name="message"]').val() == '') {
-			alert("Please complete all required fields.")
-			return
-		} else {
-
-			$.ajax({
-				type: "POST",
-				url: "/api/new-message/",
-				data: data,
-				dataType: "json",
-				encode: true,
-				success: (data) => {
-					if (data.success === true) {
-						alert("Message successfully sent...")
-					} else {
-						// On error
-						alert("Error:" + data)
-			        }
-				}
-			})
-
-		}
-
-	}); // End Contact form handler
-
 }); // End document ready
