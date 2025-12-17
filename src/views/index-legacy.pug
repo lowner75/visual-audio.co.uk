@@ -29,7 +29,7 @@ block content
   //- Landing page content
   //- -----------------------
 
-  .page-landing
+  .landing-page
 
     //- -----------------------
     //- Carousel section
@@ -96,7 +96,7 @@ block content
     section.landing-about(style="padding-bottom: 0px")
 
       //- Anchor for services section
-      a#landing-about.anchor
+      a#about.anchor
 
       .landing-about__content
         .landing-about__grid
@@ -121,7 +121,7 @@ block content
       .services-hero.text-center &quot;We provide a one company, one port of call service for all of our customers technical requirements.&quot;
 
     //- Anchor for services section
-    a#landing-services.anchor
+    a#services.anchor
 
     //- Services main section
     section.landing-services(style='background: #20202f')
@@ -197,7 +197,10 @@ block content
           h3 Work
         div(style='width: 450px; max-width: 75%; margin: 40px auto 60px auto; padding-top: 0')
           | The following is a small selection of some of the projects we&apos;ve worked on, highlighting some of our experience with venues, fashion shows, events, and promotions.
-        a#work.anchor(style='position: absolute')
+        
+        //- Anchor for work section
+        a#work.anchor
+        
         #luxy-els-container(style='position: relative')
           a(data-fancybox='secrets-gallery' href='images/legacy/portfolio/fancybox/the-secrets-of-fresh-fields-01.jpg')
             .luxy-el-container
