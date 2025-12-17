@@ -6,12 +6,12 @@ import nodemailer, { SentMessageInfo } from "nodemailer";
 export default fp(async (fastify) => {
 
   const transporter = nodemailer.createTransport({
-    host: process.env.NODEMAILER_HOST,
-    port: Number(process.env.NODEMAILER_PORT) || 587,
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT) || 587,
     secure: false, // true for 465, false for other ports ...
     auth: {
-      user: process.env.NODEMAILER_USER,
-      pass: process.env.NODEMAILER_PASS,
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
     },
   });
 
@@ -30,7 +30,7 @@ export default fp(async (fastify) => {
       
       // Only include bcc if it's a string or array — ignore null ...
       const mailOptions: Parameters<typeof transporter.sendMail>[0] = {
-        from: options.from || `"Visual Audio" <${process.env.NODEMAILER_USER}>`,
+        from: options.from || `"Visual Audio" <${process.env.SMTP_USER}>`,
         to: options.to,
         subject: options.subject,
         html: options.html,
