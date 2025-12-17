@@ -20,6 +20,7 @@ import { helmetMiddleware } from "./middleware/helmet";
 
 // Routes ...
 import { landingRoutes } from "./modules/landing/landing.routes";
+import { messageRoutes } from "./modules/messages/message.routes";
 
 dotenv.config();
 
@@ -59,6 +60,7 @@ export async function buildApp() {
 
   // Routes ...
   await app.register(landingRoutes);
+  await app.register(messageRoutes);
  
   return app;
 
