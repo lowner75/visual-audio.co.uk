@@ -4,101 +4,185 @@ extends ../views/layouts/main-legacy
 
 block content
 
-  body
+  //- -----------------------
+  //- Intro overlay (brand entry animation)
+  //- -----------------------
+
+  #intro-overlay
+    #intro-logo.flex-center
+      img(src='images/legacy/logo.png' alt='Visual Audio Logo')
+    #transition-wipe-1
+  #transition-wipe-2
+
+  //- -----------------------
+  //- Modal(s)
+  //- -----------------------
+
+  .va-modal.va-modal--contact-error
+    .va-modal__content
+      .va-modal__header Visual Audio: Contact Form Error
+      .va-modal__body Please complete all of the required fields to submit a contact request.
+      .va-modal__footer
+        button.btn-va-modal.btn-va-modal--primary Confirm
+
+  //- -----------------------
+  //- Landing page content
+  //- -----------------------
+
+  .page-landing
 
     //- -----------------------
-    //- Modal
+    //- Carousel section
     //- -----------------------
 
-    //- Contact Error Modal
-
-    .va-modal.va-modal--contact-error
-      .va-modal__content
-        .va-modal__header Visual Audio: Contact Form Error
-        .va-modal__body Please complete all of the required fields to submit a contact request.
-        .va-modal__footer
-          button.btn-va-modal.btn-va-modal--primary Confirm
+    .carousel.slide(id="carousel" data-bs-ride="carousel" style="overflow: hidden; position: relative; width: 100vw" data-bs-interval="5000")
+      .carousel-inner(style="position: relative")
+        .carousel-item.active(style="width: 100%; height: 100vh; background-color: #20202f")
+          img(src="images/legacy/hero-slide-01.jpg" style="object-fit: cover; object-position: 45% 100%; width: 100%; height: 100%")
+          .carousel-overlay
+          .carousel-content-wrapper.flex-center
+            .carousel-text-wrapper
+              .carousel-content
+                .carousel-header(style="text-shadow: 0 0 10px rgba(0,0,0,0.5)") We collaborate. We create.
+                .carousel-text We work with you to <strong>bring your vision to life</strong>.
+        .carousel-item(style="width: 100%; height: 100vh; background-color: #20202f")
+          img(src="images/legacy/hero-slide-02.jpg" style="object-fit: cover; object-position: 45% 100%; width: 100%; height: 100%")
+          .carousel-overlay
+          .carousel-content-wrapper.flex-center
+            .carousel-text-wrapper
+              .carousel-content
+                .carousel-header(style="text-shadow: 0 0 10px rgba(0,0,0,0.5)") Lighting. Sound. Audio Visual.
+                .carousel-text We provide a <strong>single port of call</strong> for everything AV.
+        .carousel-item(style="width: 100%; height: 100vh; background-color: #20202f")
+          img(src="images/legacy/hero-slide-03.jpg" style="object-fit: cover; object-position: 45% 100%; width: 100%; height: 100%")
+          .carousel-overlay
+          .carousel-content-wrapper.flex-center
+            .carousel-text-wrapper
+              .carousel-content
+                .carousel-header(style="text-shadow: 0 0 10px rgba(0,0,0,0.5)") Tailored Private Functions.
+                .carousel-text We create <strong>magical moments</strong>
+        .carousel-item(id="carousel-video" style="width: 100%; height: 100vh; background-color: #20202f")
+          video(id="video-splash" width="100%" height="100%" autoplay loop muted playsinline style="object-fit: cover" poster="images/legacy/videos/5g-video-placeholder.jpg") 
+            source(src="images/legacy/videos/5g-video.mp4" type="video/mp4")
+          .carousel-overlay
+          .carousel-content-wrapper.flex-center
+            .carousel-text-wrapper
+              .carousel-content
+                .carousel-header(style="text-shadow: 0 0 10px rgba(0,0,0,0.5)") Unforgettable Experiences.
+                .carousel-text We provide a <strong>single port of call</strong> for everything AV.
+        a.carousel-control-prev(href="#carousel" role="button" data-bs-slide="prev" style="z-index: 1000; justify-content: flex-start")
+          img(src="images/legacy/chevron-left.png")
+        a.carousel-control-next(href="#carousel" role="button" data-bs-slide="next" style="z-index: 1000; justify-content: flex-end")
+          img(src="images/legacy/chevron-right.png")
 
     //- -----------------------
-    //- Landing Page Content
+    //- Intro section
     //- -----------------------
 
-    .page-landing
+    section.landing-intro
+      .landing-intro__content
+        .landing-intro__grid
+          .landing-intro__grid--item
+            h2 Visual Audio is one of the 
+              span(style='font-weight: 700') UK&apos;s leading lighting, sound and AV production companies
+              | . We create unforgettable experiences for our customers.
+            div(style='padding: 20px 0 40px 0; font-size: 120%')
+              | Visual Audio is one of the UK&apos;s leading lighting, sound and audio visual production companies. We also provide lighting and sound design, venue installation, equipment hire, and more. With creativity at heart, our goal is to create special and unforgettable experiences for our customers.
 
-      //- -----------------------
-      //- Carousel Section
-      //- -----------------------
+    //- -----------------------
+    //- About section
+    //- -----------------------
 
-      .carousel.slide(id="carousel" data-bs-ride="carousel" style="overflow: hidden; position: relative; width: 100vw" data-bs-interval="5000")
-        .carousel-inner(style="position: relative")
-          .carousel-item.active(style="width: 100%; height: 100vh; background-color: #20202f")
-            img(src="images/legacy/hero-slide-01.jpg" style="object-fit: cover; object-position: 45% 100%; width: 100%; height: 100%")
-            .carousel-overlay
-            .carousel-content-wrapper.flex-center
-              .carousel-text-wrapper
-                .carousel-content
-                  .carousel-header(style="text-shadow: 0 0 10px rgba(0,0,0,0.5)") We collaborate. We create.
-                  .carousel-text We work with you to <strong>bring your vision to life</strong>.
-          .carousel-item(style="width: 100%; height: 100vh; background-color: #20202f")
-            img(src="images/legacy/hero-slide-02.jpg" style="object-fit: cover; object-position: 45% 100%; width: 100%; height: 100%")
-            .carousel-overlay
-            .carousel-content-wrapper.flex-center
-              .carousel-text-wrapper
-                .carousel-content
-                  .carousel-header(style="text-shadow: 0 0 10px rgba(0,0,0,0.5)") Lighting. Sound. Audio Visual.
-                  .carousel-text We provide a <strong>single port of call</strong> for everything AV.
-          .carousel-item(style="width: 100%; height: 100vh; background-color: #20202f")
-            img(src="images/legacy/hero-slide-03.jpg" style="object-fit: cover; object-position: 45% 100%; width: 100%; height: 100%")
-            .carousel-overlay
-            .carousel-content-wrapper.flex-center
-              .carousel-text-wrapper
-                .carousel-content
-                  .carousel-header(style="text-shadow: 0 0 10px rgba(0,0,0,0.5)") Tailored Private Functions.
-                  .carousel-text We create <strong>magical moments</strong>
-          .carousel-item(id="carousel-video" style="width: 100%; height: 100vh; background-color: #20202f")
-            video(id="video-splash" width="100%" height="100%" autoplay loop muted playsinline style="object-fit: cover" poster="images/legacy/videos/5g-video-placeholder.jpg") 
-              source(src="images/legacy/videos/5g-video.mp4" type="video/mp4")
-            .carousel-overlay
-            .carousel-content-wrapper.flex-center
-              .carousel-text-wrapper
-                .carousel-content
-                  .carousel-header(style="text-shadow: 0 0 10px rgba(0,0,0,0.5)") Unforgettable Experiences.
-                  .carousel-text We provide a <strong>single port of call</strong> for everything AV.
-          a.carousel-control-prev(href="#carousel" role="button" data-bs-slide="prev" style="z-index: 1000; justify-content: flex-start")
-            img(src="images/legacy/chevron-left.png")
-          a.carousel-control-next(href="#carousel" role="button" data-bs-slide="next" style="z-index: 1000; justify-content: flex-end")
-            img(src="images/legacy/chevron-right.png")
+    section.landing-about(style="padding-bottom: 0px")
 
-      //- -----------------------
-      //- Intro Section
-      //- -----------------------
+      //- Anchor for services section
+      a#landing-about.anchor
 
-      section.landing-intro
-        .landing-intro__content
-          .landing-intro__grid
-            .landing-intro__grid--item
-              h2 Visual Audio is one of the 
-                span(style='font-weight: 700') UK&apos;s leading lighting, sound and AV production companies
-                | . We create unforgettable experiences for our customers.
-              div(style='padding: 20px 0 40px 0; font-size: 120%')
-                | Visual Audio is one of the UK&apos;s leading lighting, sound and audio visual production companies. We also provide lighting and sound design, venue installation, equipment hire, and more. With creativity at heart, our goal is to create special and unforgettable experiences for our customers.
+      .landing-about__content
+        .landing-about__grid
+          .landing-about__grid--item
+            .landing-about__grid--image
+              img(src='images/legacy/about.jpg')
+          .landing-about__grid--item
+            .landing-about__grid--text
+              h3 About Us
+              div(style='max-width: 100%; margin: 40px 0 0 0')
+                p With over 30 years combined experience, we produce meaningful shows and events that people never forget. We unite culture with the consumer, pushing boundaries to produce incredible spectacles which have our trademark Visual Audio &lsquo;wow factor&rsquo;.
+                p Visual Audio is a complete team of project managers, designers and technicians based in London, providing a one company, one port of call service for all of our customers  technical requirements.
+                p We offer everything from lighting and sound design, to production management and equipment hire, working with fashion shows, night clubs, conferences, art installations, live performances, as well as theatre and concert halls, to name but a few.
 
-      //- -----------------------
-      //- Intro Section
-      //- -----------------------
+    //- -----------------------
+    //- Services section
+    //- -----------------------
 
-      section.landing-about
+    //- Services hero image
+    .position-relative
+      img(src='images/legacy/hero-services.jpg' style='height: 700px; width: 100%; object-fit: cover; object-position: 50% 30%; filter: brightness(80%)')
+      .services-hero.text-center &quot;We provide a one company, one port of call service for all of our customers technical requirements.&quot;
 
-        a#landing-about.anchor
-        .landing-about__content
-          .landing-about__grid
-            .landing-about__grid--item
-              .landing-about__grid--image
-                img(src='images/legacy/about.jpg')
-            .landing-about__grid--item
-              .landing-about__grid--text
-                h3 About Us
-                div(style='max-width: 100%; margin: 40px 0 0 0')
-                  p With over 30 years combined experience, we produce meaningful shows and events that people never forget. We unite culture with the consumer, pushing boundaries to produce incredible spectacles which have our trademark Visual Audio &lsquo;wow factor&rsquo;.
-                  p Visual Audio is a complete team of project managers, designers and technicians based in London, providing a one company, one port of call service for all of our customers  technical requirements.
-                  p We offer everything from lighting and sound design, to production management and equipment hire, working with fashion shows, night clubs, conferences, art installations, live performances, as well as theatre and concert halls, to name but a few.
+    //- Anchor for services section
+    a#landing-services.anchor
+
+    //- Services main section
+    section.landing-services(style='background: #20202f')
+      .container(style='text-align: center')
+        h3.text-white Services
+        .d-block(style='width: 450px; max-width: 90%; margin: 40px auto 60px auto')
+          | We provide a wide range of services, including, but not limited to, those show below. If it&apos;s got anything to do with light or sound, we can do it.
+        .landing-services-grid
+          .landing-services-grid-item.hi-icon-wrap.hi-icon-effect-8()
+            div
+              img(src='images/legacy/icon1.png' style='width: 100px; display: inline')
+            .landing-services-grid-header Venue Installation
+            .landing-services-grid-text
+              | We provide technical design and installation services for a multitude of venues, including concert halls, theatres, schools, exhibition centres, dry hire venue spaces and nightclubs.
+            .landing-services-grid-button
+          .landing-services-grid-item.hi-icon-wrap.hi-icon-effect-8()
+            div
+              img(src='images/legacy/icon2.png' style='width: 100px; display: inline')
+            .landing-services-grid-header Lighting &amp; Sound Design
+            .landing-services-grid-text
+              | We offer a full lighting and sound design service for events and theatrical productions. We can work as part of your creative team. Supporting you with expert advice and technical development.
+            .landing-services-grid-button
+          .landing-services-grid-item.hi-icon-wrap.hi-icon-effect-8()
+            div
+              img(src='images/legacy/icon3.png' style='width: 100px; display: inline')
+            .landing-services-grid-header Equipment Hire
+            .landing-services-grid-text
+              | We provide sound, light, AV and stage hire to businesses and venues. Eveything from speakers to DJ packs, feature lights to lasers, and HD TV&apos;s to conference packages.
+            .landing-services-grid-button
+          .landing-services-grid-item.hi-icon-wrap.hi-icon-effect-8()
+            div
+              img(src='images/legacy/icon4.png' style='width: 100px; display: inline')
+            .landing-services-grid-header Production Management
+            .landing-services-grid-text
+              | From start to finish our production managers will ensure your vision is managed and met in a stress freeway. With flawless communication throughout the journey. Using technology and creative execution.
+            .landing-services-grid-button
+          .landing-services-grid-item.hi-icon-wrap.hi-icon-effect-8()
+            div
+              img(src='images/legacy/icon5.png' style='width: 100px; display: inline')
+            .landing-services-grid-header Rigging &amp; Certification
+            .landing-services-grid-text
+              | We offer a testing and inspection service. All of our rigging is certificated and up to date. Employing a team of certified riggers making sure everything is safe and sound.
+            .landing-services-grid-button
+          .landing-services-grid-item.hi-icon-wrap.hi-icon-effect-8()
+            div
+              img(src='images/legacy/icon6.png' style='width: 100px; display: inline')
+            .landing-services-grid-header Power Distribution
+            .landing-services-grid-text
+              | Providing all of our events with PAT tested cabling, and fully qualified events electricians. Designing and delivering the power distribution along side our team of AV specialists to complete the package.
+            .landing-services-grid-button
+          .landing-services-grid-item.hi-icon-wrap.hi-icon-effect-8()
+            div
+              img(src='images/legacy/icon7.png' style='width: 100px; display: inline')
+            .landing-services-grid-header Lighting &amp; Sound Programming
+            .landing-services-grid-text
+              | Creativity is key to everything we do. Taking pride in the delivery constructing a system that meets our client&rsquo;s requirements.
+            .landing-services-grid-button
+          .landing-services-grid-item.hi-icon-wrap.hi-icon-effect-8()
+            div
+              img(src='images/legacy/icon8.png' style='width: 100px; display: inline')
+            .landing-services-grid-header Visualisations
+            .landing-services-grid-text
+              | Using state of the art CAD technology Visual Audio can produce designs and visuals from the offset. With the potential to see your event in its full capacity before we deliver the final product.
+            .landing-services-grid-button
