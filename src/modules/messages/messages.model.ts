@@ -20,13 +20,13 @@ const MessageSchema = new Schema<IMessage>(
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
     email: { type: String, required: true },
-    telephone: { type: String, required: true }, // supports +44, etc.
+    telephone: { type: String, required: true },
     message: { type: String, required: true },
     source: { type: String },
     ipAddress: { type: String },
     userAgent: { type: String },
   },
-  { timestamps: true } // adds createdAt and updatedAt automatically
+  { timestamps: true }
 );
 
 export const MessageModel = model<IMessage>('Message', MessageSchema);
