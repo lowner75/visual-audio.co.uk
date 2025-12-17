@@ -8,14 +8,13 @@ html(lang='en')
   head
     include ../include/legacy-head.pug 
   body
-    div(id="luxy")
 
-      //- Navigation
-      include ../include/legacy-nav.pug 
+    //- Navigation
+    include ../include/legacy-nav.pug 
 
-      //- Main content
-      main(role="main")
-        block content
+    //- Main content
+    main(id="luxy" role="main")
+      block content
 
       //- Footer
       include ../include/legacy-footer.pug
