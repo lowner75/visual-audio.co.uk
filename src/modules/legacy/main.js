@@ -3,7 +3,7 @@
 "use strict";
 
 // On document ready
-$(() => {
+$(function() {
 
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
@@ -39,38 +39,46 @@ $(() => {
 
 	// Animate nav on scroll from top
 	function animateNav() {
-		// Nav background visibility
-		if (window.pageYOffset > window.innerHeight/200 && navOpen !== true) {
-			// If scrolling from the top of the page
-			gsap.to('.nav-background', { duration: 1, autoAlpha: 1 } );
-		} else {
-			// Else, if scrolling back to the top of the page
-			$('#menu-link-home').addClass('is-active');
-			gsap.to('.nav-background', { duration: 1, autoAlpha: 0 } );
-		}
+    if (window.location.pathname === "/terms-and-conditions") {
+      return; // Disable header animation on terms and conditions page
+    } else {
+      // Nav background visibility
+      if (window.pageYOffset > window.innerHeight/200 && navOpen !== true) {
+        // If scrolling from the top of the page
+        gsap.to('.nav-background', { duration: 1, autoAlpha: 1 } );
+      } else {
+        // Else, if scrolling back to the top of the page
+        $('#menu-link-home').addClass('is-active');
+        gsap.to('.nav-background', { duration: 1, autoAlpha: 0 } );
+      }
+    }
 	} // End animate nav on scroll from top
 
 	// Animate nav based on scroll direction
 	var lastScrollTop = 0, scrollDirection = "down";
 	$(window).scroll(function(event){
-	   if($(this).scrollTop() > lastScrollTop && $(this).scrollTop() > (window.innerHeight * 0.85)) {
-	       // Down scroll code - hide nav
-				 if(scrollDirection != "down" && navOpen !== true) {
-					 gsap.to('nav', { duration: 1, y: -170, ease: "Expo.easeInOut" } );
-					 gsap.to('.hamburger', { duration: 1, y: -170, ease: "Expo.easeInOut" } );
-					 gsap.to('.nav-background', { duration: 1, y: -170, ease: "Expo.easeInOut" } );
-				 }
-				 scrollDirection = "down";
-	   } else {
-	      // Up scroll code - show header
-				if(scrollDirection != "up" && navOpen !== true) {
-					gsap.to('nav', { duration: 1, y: 0, ease: "Power4.easeOut" } );
-					gsap.to('.hamburger', { duration: 1, y: 0, ease: "Power4.easeOut" } );
-					gsap.to('.nav-background', { duration: 1, y: 0, ease: "Power4.easeOut" } );
-				}
-				scrollDirection = "up";
-	   }
-	   lastScrollTop = $(this).scrollTop();
+    if (window.location.pathname === "/terms-and-conditions") {
+      return; // Disable header animation on terms and conditions page
+    } else {
+      if($(this).scrollTop() > lastScrollTop && $(this).scrollTop() > (window.innerHeight * 0.85)) {
+        // Down scroll code - hide nav
+        if(scrollDirection != "down" && navOpen !== true) {
+          gsap.to('nav', { duration: 1, y: -170, ease: "Expo.easeInOut" } );
+          gsap.to('.hamburger', { duration: 1, y: -170, ease: "Expo.easeInOut" } );
+          gsap.to('.nav-background', { duration: 1, y: -170, ease: "Expo.easeInOut" } );
+        }
+        scrollDirection = "down";
+      } else {
+        // Up scroll code - show header
+        if(scrollDirection != "up" && navOpen !== true) {
+          gsap.to('nav', { duration: 1, y: 0, ease: "Power4.easeOut" } );
+          gsap.to('.hamburger', { duration: 1, y: 0, ease: "Power4.easeOut" } );
+          gsap.to('.nav-background', { duration: 1, y: 0, ease: "Power4.easeOut" } );
+        }
+        scrollDirection = "up";
+      }
+    }
+    lastScrollTop = $(this).scrollTop();
 	}); // End animate header based on scroll direction
 
 	// Mobile menu animations
@@ -102,7 +110,7 @@ $(() => {
 		}
 	}); // End mobile menu animations
 
-	// Listener for mobile menu links
+  // Listener for mobile menu links
 	$('.mmenu-link a').click(function(e) {
 		var selectedLink = this.id, linkCount = 1, totalLinks = $('.mmenu-link a').length;
 		$('.mmenu-link a').each(function() {
@@ -121,21 +129,53 @@ $(() => {
 		});
 	}); // End listener for mobile menu links
 
-	// Animate desktop navigation links
-	$('.menu-link').click(function() {
-		var el = ($(this).attr('id'));
-		$('.menu-link').removeClass('is-active');
-		$('#'+el).addClass('is-active');
-	}); // End animate desktop navigation links
+	// Animate desktop navigation links with active class based on scroll position
+  $('.va-nav__link').click(function(e) {
+    e.preventDefault(); // stop default jump
+    if($(this).attr('href') === "/terms-and-conditions") {
+      window.location.href = "/terms-and-conditions";
+      return;
+    }
+    if (window.location.pathname === "/terms-and-conditions") {
+      if($(this).attr('href') === "/terms-and-conditions") {
+        window.location.href = "/terms-and-conditions";
+        return;
+      } else {
+        window.location.href = "/";
+        return; 
+      }
+    }
+    const targetId = $(this).attr('href').slice(1); // remove '#' from href
+    const targetEl = document.getElementById(targetId);
+    if(!targetEl) return;
 
-	// Intersection Observer for page navigation
+    // Optional: temporarily remove observer-triggered is-active, if needed
+    // $('.va-nav__link').removeClass('is-active');
+    // $(this).addClass('is-active');
+
+    // GSAP smooth scroll
+    gsap.to(window, {
+      duration: 1,
+      onUpdate: () => {
+        window.scrollTo({
+          top: targetEl.offsetTop,
+          left: 0,
+          behavior: "auto" // or "smooth" (but gsap already handles animation)
+        });
+      }
+    });
+
+    // Optional: you could also animate other elements here like nav background
+  });
+
+  // Intersection Observer for page navigation
   var targets = document.querySelectorAll(".anchor");
   var observer = new IntersectionObserver(entries => {
     entries.forEach(function(entry) {
       if(entry.isIntersecting) {
         // On entry
         if(pageAnimationsComplete == true) {
-          $('.menu-link').removeClass('is-active');
+          $('.va-nav__link').removeClass('is-active');
           var el;
           if(entry.target.id == "home") { el = "#menu-link-home"; }
           if(entry.target.id == "about") { el = "#menu-link-about"; }
@@ -154,7 +194,7 @@ $(() => {
   targets.forEach(target => {
     observer.observe(target);
   });
-// End intersection Observer for page navigation
+  // End intersection Observer for page navigation
 
 	// Intersection Observer to animate luxy-el images
 	//if(!_ua.Mobile && !_ua.Tablet) {
