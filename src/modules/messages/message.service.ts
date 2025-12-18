@@ -2,8 +2,9 @@
 
 import { MessageModel, IMessage } from './message.model';
 import { FastifyReply } from 'fastify';
+import { CreateMessageInput } from './message.routes';
 
-export async function createMessage(data: IMessage, reply: FastifyReply) {
+export async function createMessage(data: CreateMessageInput, reply: FastifyReply) {
   const message = new MessageModel(data);
   
   try {
@@ -13,7 +14,7 @@ export async function createMessage(data: IMessage, reply: FastifyReply) {
 
     // Send email via Nodemailer plugin
     await reply.sendEmail({
-      to: '"Bryan Lown" <hello@bryanlown.com>', //process.env.SMTP_USER!,
+      to: '"Bryan Lown" <hello@bryanlown.com>', // For testing, otherwise: process.env.SMTP_USER!
       subject: `New Contact Form Message from ${message.firstName} ${message.lastName}`,
       html: `
         <p><strong>Name:</strong> ${message.firstName} ${message.lastName}</p>
@@ -28,7 +29,7 @@ export async function createMessage(data: IMessage, reply: FastifyReply) {
 
   } catch (err) {
     console.error('Failed to save/send message:', err);
-    return { success: false, error: 'Message could not be processed.' };
+    return { success: false, error: err };
   }
 
   return message;
