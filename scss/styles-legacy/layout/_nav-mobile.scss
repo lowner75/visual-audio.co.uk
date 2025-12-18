@@ -28,7 +28,7 @@
   padding: 0 100px;
   color: #fff;
   font-family: 'Playfair Display', serif;
-  font-size: 40px;
+  font-size: 1rem;
   font-weight: 200;
   text-transform: capitalize;
   background: rgba(255, 255, 255, 0.05);
@@ -58,6 +58,7 @@
   display: block;
   color: #d2d3d9;
   color: rgba(255, 255, 255, 0.7);
+  text-decoration: none !important;
 }
 
 #mmenu ul li a:hover {
