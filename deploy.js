@@ -32,14 +32,14 @@ async function deploy() {
     console.log("Uploading /dist ...");
     await sftp.uploadDir(path.resolve("./dist"), process.env.SFTP_DIST_PATH || "/dist");
 
-    // Upload /dist/views
-    console.log("Uploading /dist/views ...");
-    await sftp.uploadDir(path.resolve("./src/views"), process.env.SFTP_VIEWS_PATH || "/dist/views");
-
     // Upload /public
     console.log("Uploading /public ...");
     await sftp.uploadDir(path.resolve("./public"), process.env.SFTP_PUBLIC_PATH || "/public");
     
+    // Upload /views
+    console.log("Uploading /views ...");
+    await sftp.uploadDir(path.resolve("./views"), process.env.SFTP_VIEWS_PATH || "/views");
+
     console.log("Deployment complete :)");
   } catch (err) {
     console.error("Deployment failed:", err);

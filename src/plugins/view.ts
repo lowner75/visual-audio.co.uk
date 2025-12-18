@@ -11,7 +11,7 @@ export const viewPlugin = fp(async (fastify: any) => {
     engine: {
       pug: Pug
     },
-    root: path.join(__dirname, "../views"),
+    root: path.join(__dirname, "../../views"),
     viewExt: "pug",
   });
 });
