@@ -1,23 +1,23 @@
 //- src/views/include/nav.pug
 
-//- Mobile navigation menu
+//- Mobile navigation
 #mm-wrapper
   #mm-bg-1
   #mm-bg-2
-    #mmenu.flex(style='justify-content: flex-start')
-      ul(style="list-style-type: none")
+    #mmenu.flex-center(style='justify-content: flex-start')
+      ul.mt-3(style="list-style-type: none")
         li.mmenu-link
-          a#mmenu-link-home(href='#home') Home
+          a#mmenu-link-home.text-decoration-none(href='#home') Home
         li.mmenu-link
-          a#mmenu-link-about(href='#about') About
+          a#mmenu-link-about.text-decoration-none(href='#about') About
         li.mmenu-link
-          a#mmenu-link-services(href='#services') Services
+          a#mmenu-link-services.text-decoration-none(href='#services') Services
         li.mmenu-link
-          a#mmenu-link-work(href='#work') Work
+          a#mmenu-link-work.text-decoration-none(href='#work') Work
         li.mmenu-link
-          a#mmenu-link-terms(href="/terms-and-conditions") Terms &amp; Conditions
+          a#mmenu-link-terms.text-decoration-none(href="/terms-and-conditions") Terms &amp; Conditions
         li.mmenu-link
-          a#mmenu-link-contact(href='#contact') Contact
+          a#mmenu-link-contact.text-decoration-none(href='#contact') Contact
 
 //- Desktop navigation
 nav.va-nav
@@ -29,17 +29,17 @@ nav.va-nav
       
   ul.va-nav__list
     li.va-nav__item
-      a.va-nav__link(href="#home") Home
+      a.va-nav__link#menu-link-home.is-active(href="#home") Home
     li.va-nav__item
-      a.va-nav__link(href="#about") About
+      a.va-nav__link#menu-link-about(href="#about") About
     li.va-nav__item
-      a.va-nav__link(href="#services") Services
+      a.va-nav__link#menu-link-services(href="#services") Services
     li.va-nav__item
-      a.va-nav__link(href="#work") Work
+      a.va-nav__link#menu-link-work(href="#work") Work
     li.va-nav__item
-      a.va-nav__link(href="/terms-and-conditions") Terms
+      a.va-nav__link#menu-link-terms(href="/terms-and-conditions") Terms
     li.va-nav__item
-      a.va-nav__link(href="#contact") Contact
+      a.va-nav__link#menu-link-contact(href="#contact") Contact
 
 .nav-background
 
