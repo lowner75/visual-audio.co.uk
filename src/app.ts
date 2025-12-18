@@ -22,7 +22,12 @@ import { helmetMiddleware } from "./middleware/helmet";
 import { landingRoutes } from "./modules/landing/landing.routes";
 import { messageRoutes } from "./modules/messages/message.routes";
 
-dotenv.config();
+const envFile =
+  process.env.NODE_ENV === "production"
+    ? ".env.production"
+    : ".env"; // dev uses plain .env
+
+dotenv.config({ path: envFile });
 
 export async function buildApp() {
   
