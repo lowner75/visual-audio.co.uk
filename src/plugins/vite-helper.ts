@@ -21,7 +21,7 @@ export default fp(async (fastify) => {
     manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
   }
 
-  fastify.decorateReply('viteScript', function(entry = 'src/main.js') {
+  fastify.decorateReply('viteScript', function(entry = 'src/main.ts') {
     if (isProd) {
       if (!manifest[entry]) throw new Error(`Vite entry ${entry} not found`);
       return `<script type="module" src="/build/${manifest[entry].file}"></script>`;
