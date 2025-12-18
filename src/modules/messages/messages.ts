@@ -11,7 +11,7 @@ export default function initMessagesModule() {
   if (!contactForm || !submitBtn || !contactFormModal || !contactFormContent) return;
 
   // Handle contact form submission
-  submitBtn.addEventListener('click', async (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     openModal(contactFormModal, contactFormContent); // Use your existing modal
@@ -36,8 +36,9 @@ export default function initMessagesModule() {
       });
 
       const json = await res.json();
+      //console.log('Message submission response:', json);
 
-      if (!json.success) throw new Error(json.error || 'Unknown server error');
+      if (!json.success === false) console.log(json.message.error || 'Unknown server error');
 
       // Success
       contactForm.reset();
