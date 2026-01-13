@@ -2,7 +2,7 @@
 
 import { FastifyInstance } from 'fastify';
 import { createMessage } from './message.service';
-import { IMessage } from './message.model';
+import { IMessage } from '../../models/message.model';
 
 export interface CreateMessageInput {
   firstName: string;
