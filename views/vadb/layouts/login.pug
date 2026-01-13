@@ -1,0 +1,23 @@
+//- views/vadb/layouts/login.pug
+
+block variables
+
+doctype html
+html(lang='en')
+
+  head
+
+    //- VADB head include
+    include ../include/vadb-head.pug 
+
+  body
+
+    //- Main content
+    main(id="luxy" role="main")
+      block content
+
+      //- Page-specific JS
+      include ../include/vadb-scripts.pug
+
+//- Sits outside of main to avoid luxy.js issues
+block modals
