@@ -1,0 +1,49 @@
+extend layouts/login.pug
+
+block content
+
+  //- Login modal
+  .modal
+    .modal-content.text-dark
+      .modal-header
+        img.me-3(src="/img/logo.png" style="width: 30px")
+        #modal-header.text-dark
+      .modal-body.rounded-bottom
+        #modal-body.mt-2.mb-3.px-2
+        .flex.justify-content-end
+          button.btn.btn-dark.btn-close-modal Close
+
+  //- Login container
+  .container-fluid.p-3.flex(style="min-height: 100vh; background: #efefef")
+    .container.p-0.border.shadow
+      .row.gx-0.w-100
+        .col-12.col-lg-6.text-dark.flex(style="min-height: 400px; background: #000 url(/img/bg-login.jpg); background-size: cover; background-position: 50% 50%") 
+          .flex
+            img(src="/img/logo-light.png" style="max-width: 40%")
+        .col-12.col-lg-6.flex.bg-white(style="min-height: 600px")
+          .text-left(style="min-width: 350px")
+            .card-body.text-dark
+              .col-12.mx-auto.my-0.px-4.px-md-3
+                .pb-4
+                  .row
+                    .col-12.flex.flex-row.justify-content-start.pb-4.mb-2
+                      a(href="/")
+                        img.me-3(src="/img/logo.png" style="width: 56px; margin-top: -5px")
+                    .col-12.flex.flex-row.justify-content-start
+                      h4.text-dark(style="line-height: 1.2") Welcome to your</br><span style="font-weight: 700">Visual</span><span style="font-weight: 300">Audio</span> Demo
+                .form-group.mb-2
+                  label.col-form-label.col-12.text-left.pt-0(for='email')
+                    p.mb-0.fw-bold
+                      | Email
+                  input#email.form-control.col-12.rounded-0(name='email' type='email' required='')
+                .form-group.mb-2.pb-1
+                  label.col-form-label.col-12.text-left(for='password')
+                    p.mb-0.fw-bold
+                      | Password
+                  input#password.form-control.col-12.rounded-0(name='password' type='password' required='')
+                //- .form-group.text-left.pt-2.pb-2.d-flex.align-items-center
+                  input.me-2(type='checkbox' name='remember-me-checkbox')
+                  | Remember me
+                .form-group.text-center.mt-3
+                  button#btn-login.btn.w-100.mb-3.text-white(style='background: #20242f; font-size: 10pt') Login
+                a.col-12.text-sm-center(href='/login/reset-password/') Reset Password
