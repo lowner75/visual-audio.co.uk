@@ -1,6 +1,6 @@
 // src/utils/session-store.ts
 
-import { Session } from "../modules/sessions/session.model";
+import { Session } from "../models/session.model";
 import { v4 as uuidv4 } from "uuid";
 
 // TTLs ...
