@@ -1,6 +1,6 @@
 // src/modules/messages/messages.service.ts
 
-import { MessageModel, IMessage } from './message.model';
+import { MessageModel, IMessage } from '../../models/message.model';
 import { FastifyReply } from 'fastify';
 import { CreateMessageInput } from './message.routes';
 
