@@ -69,7 +69,7 @@ Create a `.env` file in the project root:
 
 ```bash
 MONGODB_URI=your_mongodb_connection
-SESSION_SECRET=your_session_secret
+COOKIE_SECRET=your_session_secret
 JWT_SECRET=your_jwt_secret
 NODE_ENV=development
 ARGON2_MEMORY_COST=65536
