@@ -8,19 +8,21 @@ import fastifyCookie from "@fastify/cookie";
 import dotenv from "dotenv";
 import path from "path";
 
-// Plugins ...
+// Plugins
+import vitePlugin from "./plugins/vite-helper";
 import jwtPlugin from "./plugins/jwt";
 import mongoosePlugin from "./plugins/mongoose";
 import mailerPlugin from "./plugins/mailer";
 import { viewPlugin } from "./plugins/view";
-import vitePlugin from "./plugins/vite-helper";
 
-// Middleware ...
+// Middleware
 import { helmetMiddleware } from "./middleware/helmet";
 
-// Routes ...
-import { landingRoutes } from "./modules/landing/landing.routes";
+// Routes
+import { landingRoutes } from "./modules/legacy/landing.routes";
 import { messageRoutes } from "./modules/messages/message.routes";
+import { betaModule } from "./modules/beta/index";
+import { vadbRoutes } from "./modules/vadb/vadb.routes";
 
 const envFile =
   process.env.NODE_ENV === "production"
@@ -33,39 +35,41 @@ export async function buildApp() {
   
   const app = Fastify({ logger: true });
   
-  // Serve static files from public ...
-  app.register(fastifyStatic, {
+  // Serve static files from public
+  await app.register(fastifyStatic, {
     root: path.join(__dirname, "../public"),
     prefix: "/",
   });
 
-  // View engine ...
+  // View engine
   await app.register(viewPlugin);
 
-  // Needed for urlencoded forms ...
-  app.register(fastifyFormbody);
+  // Needed for urlencoded forms
+  await app.register(fastifyFormbody);
   
-  // Basic security ...
+  // Basic security
   await app.register(helmetMiddleware);
 
-  // CORS - allow credentials (cookies) ...
+  // CORS - allow credentials (cookies)
   await app.register(corsPlugin, {
     origin: true,
     credentials: true
   });
 
-  // Cookies and session ...
-  await app.register(fastifyCookie, {secret: process.env.JWT_SECRET });
+  // Cookies and session
+  await app.register(fastifyCookie, {secret: process.env.SESSION_SECRET });
 
-  // Plugins ...
+  // Plugins
   await app.register(vitePlugin);
   await app.register(jwtPlugin);
   await app.register(mongoosePlugin);
   await app.register(mailerPlugin);
 
-  // Routes ...
+  // Routes
   await app.register(landingRoutes);
   await app.register(messageRoutes);
+  await app.register(betaModule);
+  await app.register(vadbRoutes);
  
   return app;
 
