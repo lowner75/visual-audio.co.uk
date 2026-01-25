@@ -12,7 +12,10 @@ export default defineConfig({
     emptyOutDir: false,
     manifest: true,
     rollupOptions: {
-      input: path.resolve(__dirname, 'src/main.ts'),
+      input: {
+        main: path.resolve(__dirname, 'src/main.ts'),
+        legacy: path.resolve(__dirname, 'src/main-legacy.ts'),
+      }
     },
   },
 });
