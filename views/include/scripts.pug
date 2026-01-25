@@ -1,0 +1,35 @@
+//- views/include/scripts.pug
+
+//- ========================
+//- Vendor JS
+//- ========================
+
+//- Bootstrap
+script(src="/js/vendor/bootstrap.min.js")
+
+//- GSAP animations
+script(src="/js/vendor/gsap.min.js")
+
+//- Luxy smooth scroll
+script(src="/js/vendor/luxy.min.js")
+
+//- jQuery (for Fancybox support)
+script(src="/js/vendor/jquery.min.js")
+
+//- Fancybox for image lightboxes
+script(src="/js/vendor/jquery.fancybox.min.js")
+
+//- ========================
+//- Page-specific scripts
+//- ========================
+
+block scripts
+  if pageScripts
+    each src in pageScripts
+      script(src=src)
+
+//- ========================
+//- Vite helper (bundled frontend JS)
+//- ========================
+
+!= viteScript("main")
