@@ -1,0 +1,28 @@
+// scss/styles.scss
+
+// Abstracts
+@use 'styles/abstracts/mixins';
+@use 'styles/abstracts/utilities';
+
+// Base styles
+@use 'styles/base/base';
+@use 'styles/base/fonts';
+@use 'styles/base/forms';
+@use 'styles/base/reset';
+@use 'styles/base/typography';
+
+// Components
+@use 'styles/components/buttons';
+@use 'styles/components/icons';
+@use 'styles/components/modals';
+@use 'styles/components/scrollbar';
+@use 'styles/components/switches';
+
+// Page styles
+@use 'styles/pages/login';
+
+// Themes
+@use 'styles/themes/theme';
+
+// Vendor overrides
+@use 'styles/vendors/bootstrap-override';
