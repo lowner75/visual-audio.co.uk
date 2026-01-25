@@ -1,8 +1,17 @@
 // src/modules/beta/index.ts
 
 import { FastifyPluginAsync } from "fastify";
-import { betaRoutes } from "./routes/landing.routes";
+import { betaAuthHook } from "./hooks/betaAuthHook";
+import { authRoutes } from "./routes/auth.routes";
+import { landingRoutes } from "./routes/landing.routes";
 
 export const betaModule: FastifyPluginAsync = async (fastify) => {
-  fastify.register(betaRoutes, { prefix: "/beta" });
+
+  await fastify.register(async (f) => {
+    f.addHook("preHandler", betaAuthHook);
+    await f.register(landingRoutes);
+  });
+
+  fastify.register(authRoutes);
+
 };
