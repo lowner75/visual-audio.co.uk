@@ -31,9 +31,14 @@ const envFile =
 
 dotenv.config({ path: envFile });
 
+console.log("cwd:", process.cwd());
+console.log("envFile:", envFile);
+
 export async function buildApp() {
   
-  const app = Fastify({ logger: true });
+  const app = Fastify({
+    logger: true
+  });
   
   // Serve static files from public
   await app.register(fastifyStatic, {
@@ -57,7 +62,7 @@ export async function buildApp() {
   });
 
   // Cookies and session
-  await app.register(fastifyCookie, {secret: process.env.SESSION_SECRET });
+  await app.register(fastifyCookie, { secret: process.env.SESSION_SECRET });
 
   // Plugins
   await app.register(vitePlugin);
