@@ -1,0 +1,79 @@
+// scss/styles/themes/_theme.scss
+
+// Dark theme
+html {
+  --text: #ffffff;
+  --text-inverse: #181818;
+  --text-muted: #9c9c9c;
+  --text-placeholder: #7a7a7a;
+  --bg: #181818;
+  --border: #5e5e5e;
+  --border-muted: #2d2d2d;
+  --button: #313131;
+  --button-hover: rgba(255,255,255,0.15);
+  --button-disabled: rgba(255,255,255,0.1);
+  --icon: rgba(255, 255, 255, 0.5);
+  --icon-bg-hover: rgba(255, 255, 255, 0.07);
+  --bg-grid-image-gradient-color: rgba(255, 255, 255, 0.04);
+  --bg-grid-image-radial-color: rgba(255, 255, 255, 0.8);
+}
+
+// Light theme
+html[data-theme="light"] {
+  --text: #1a1a1a;
+  --text-inverse: #ffffff;
+  --text-muted: #696969;
+  --text-placeholder: #a3a3a3;
+  --bg: #ffffff;
+  --border: #e3e3e3;
+  --border-muted: #e9e9e9;
+  --button: #eeeeee;
+  --button-hover: rgba(0,0,0,0.1);
+  --button-disabled: #f0f0f0;
+  --icon: rgba(0, 0, 0, 0.6);
+  --icon-bg-hover: rgba(0, 0, 0, 0.1);
+  --bg-grid-image-gradient-color: rgba(0, 0, 0, 0.1);
+  --bg-grid-image-radial-color: rgba(0, 0, 0, 0.8);
+}
+
+// Navy theme
+html[data-theme="navy"] {
+  --text: #ffffff;
+  --bg: #14121d;
+  --border: rgba(255,255,255,0.3);
+  --button: rgba(255,255,255,0.15);
+  --button-hover: rgba(255,255,255,0.2);
+}
+
+// Black theme
+html[data-theme="black"] {
+  --text: #ffffff;
+  --bg: #000000;
+  --button: #1a1a1a;
+  --button-hover: #222222;
+  --bg-grid-image-gradient-color: rgba(255, 255, 255, 0.1);
+  --bg-grid-image-radial-color: rgba(255, 255, 255, 0.8);
+}
+
+:root {
+  --brand-primary: #74c128;
+  --brand-primary-rgb: 116, 193, 40;
+  --brand-primary-2: #5aa81e;
+  --input-border-focus: #5482b7; // #007bff;
+  --text-link: var(--brand-primary);
+  --text-link-hover: var(--brand-primary-2);
+  --scrollbar-bg: var(--brand-primary);
+  --scrollbar-thumb: var(--brand-primary);
+  --scrollbar-thumb-hover: var(--brand-primary);
+  svg {
+    fill: var(--icon);
+  }
+}
+
+.btn-change-theme {
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--text-muted);
+  border: solid 1px var(--border-muted);
+  border-radius: 4px;
+}
