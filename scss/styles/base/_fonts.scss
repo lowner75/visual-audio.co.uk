@@ -1,0 +1,28 @@
+// scss/styles/base/_fonts.scss
+
+// Roboto variable (body text)
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Roboto Condensed variable
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('../fonts/Roboto-Condensed-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Aaaiight font
+@font-face {
+  font-family: 'Aaaiight';
+  src: url('../fonts/aaaiight.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
