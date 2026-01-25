@@ -1,0 +1,91 @@
+doctype html
+html(lang="en")
+	include ../include/head
+
+	body
+
+		//- Login Feedback Modal
+		.va-modal
+			.va-modal__content
+				.va-modal__header
+					img.me-3(src="/images/logo.png" style="width: 30px")
+					.logo-text
+						span(style="font-weight: 600") Visual
+						span(style="font-weight: 300") Audio
+				.va-modal__body
+				.va-modal__footer
+					button.btn-va-modal--secondary Close
+
+		//- Login Page Content
+		#login-page.flex-center.position-relative
+
+			#settings-panel.position-absolute(style="top: 0px; right: -300px; bottom: 0; width: 300px; background: var(--bg); border-left: 1px solid var(--border-muted); z-index: 2")
+				.settings-panel-content(style="padding: 28px 24px 28px 28px;")
+					.d-flex.justify-content-between.pb-2
+						div Settings
+						div#btn-close-settings(style="cursor: pointer; font-size: 18pt; line-height: 1") &times;
+					div(style="color: var(--text-muted); font-size: 9pt; margin-top: 4px; padding-right: 40px;") Customize your experience by selecting a bespoke theme.
+					.flex-center.flex-row.mt-5
+						.w-100.text-center.me-1.btn-change-theme(data-theme="dark")
+							.w-100.flex-center
+								.circle
+									.circle-inner
+										.circle-center.dark
+							| Dark Mode
+						.w-100.text-center.ms-1.btn-change-theme(data-theme="light")
+							.w-100.flex-center
+								.circle
+									.circle-inner
+										.circle-center.light
+							| Light Mode
+					.flex-center.flex-row.mt-2
+						.w-100.text-center.me-1.btn-change-theme(data-theme="navy")
+							.w-100.flex-center
+								.circle
+									.circle-inner
+										.circle-center.navy
+							| Navy Mode
+						.w-100.text-center.ms-1.btn-change-theme(data-theme="black")
+							.w-100.flex-center
+								.circle
+									.circle-inner
+										.circle-center.black
+							| Black Mode
+
+			//- Version
+				.position-absolute(style="bottom: 20px; left: 20px; color: var(--text-muted); font-size: 8pt; letter-spacing: 0.5px;") Beta 2.0
+
+			//- Settings
+			.position-absolute(style="top: 20px; right: 15px;")
+				div#settings-container
+					#btn-settings.icon-container
+						svg(viewBox="0 0 24 24")
+							use(xlink:href="/images/icons/icon-settings.svg")
+
+			//- Main Login Container
+			#login-container.px-4.px-md-3.py-5
+				div.flex-center.pb-4.mb-1
+					a(href="/")
+						img.mb-1(src="/images/logo.png" style="width: 58px")
+				div.flex-center.pb-4
+					.logo-text
+						span(style="font-weight: 600") Visual
+						span(style="font-weight: 300") Audio
+				
+				//- Login Form
+				form#login-form.mb-2(method='POST' action=postURL autocomplete='off' novalidate)
+					.mb-2
+						div
+							label.mb-2(for='email') Email Address
+						div
+							input#email.w-100(name='email' type='email')
+					div.mb-2
+						div
+							label.mb-2(for='password') Password
+						div
+							input#password.w-100(name='password' type='password')
+					div.mt-4
+						button#btn-login.w-100.mb-3(type="button") Login
+				a(href='/beta/auth/login/reset-password/' style="color: var(--text); font-size: 9pt;") Reset Password
+
+			include ../include/scripts
