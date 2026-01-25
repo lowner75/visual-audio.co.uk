@@ -1,0 +1,77 @@
+// scss/styles/components/_buttons.scss
+
+button {
+
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  color: var(--text);
+  background-color: var(--button);
+  border-radius: 0.375rem !important;
+  transition: all 0.5s ease;
+  transition: transform 0.08s ease, background-color 0.15s ease;
+
+  &:hover {
+    background-color: var(--button-hover);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: var(--button-disabled);
+    color: var(--text-muted);
+    opacity: 0.6;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:focus, &:focus-visible {
+    outline: none;
+  } 
+
+}
+
+// Theme buttons
+.circle {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: 3px solid var(--brand-primary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  box-shadow: 0 0 15px rgba(255,255,255, 0.3);
+}
+
+.circle-inner {
+  height: 34px;
+  width: 34px;
+  background-color: transparent;
+  border: 2px solid var(--border-muted);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-center {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+
+}
+
+.dark {
+  background-color: #181818;
+}
+.light {
+  background-color: #ffffff;
+}
+.navy {
+  background-color: #201d2e;
+}
+.black {
+  background-color: #000000;
+}

@@ -1,0 +1,92 @@
+// scss/styles/components/_modals.scss
+
+// VA modal styles
+.va-modal {
+	z-index: 2500;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+  opacity: 0;
+	visibility: hidden;
+	background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  
+  &__content {
+    width: 450px;
+    max-width: 90%;
+    margin: auto;
+    background: var(--bg);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    border-top: solid 8px var(--button);
+
+    @media (max-width: 500px) {
+      width: 95%;
+      padding: 20px;
+    }
+  }
+    
+  &__header {
+    padding: 1.5rem 1rem;
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .logo-text {
+      font-size: 1.35rem;
+    }
+  }
+  
+  &__body {
+    color: var(--text-muted);
+    font-size: 10pt;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+
+  &__footer {
+    box-shadow: inset 1px 4px 3px -6px;
+    border-top: solid 1px var(--border-muted);
+    text-align: right;
+    padding: 10px 10px;
+    background: var(--bg);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+}
+
+.btn-va-modal {
+  font-size: inherit;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn-va-modal--secondary {
+  border: solid 1px var(--border-muted);
+  background: var(--button);
+
+  &:hover {
+    border: solid 1px var(--border-muted);
+    background: var(--button-hover);
+  }
+}
+
+.btn-va-modal--primary {
+  border: solid 1px var(--border-muted);
+  background: var(--button);
+  color: var(--text);
+
+  &:hover {
+    border: solid 1px var(--border-muted);
+    background: var(--button-hover);
+    color: var(--text);
+  } 
+}
