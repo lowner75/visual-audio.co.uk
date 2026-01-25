@@ -1,0 +1,27 @@
+//- views/beta/layouts/main.pug
+
+block variables
+
+doctype html
+html(lang='en')
+  head
+    include ../include/head.pug 
+  body
+
+    //- Navigation
+    include ../include/nav.pug 
+
+    //- Main content
+    main(id="luxy" role="main")
+      block content
+
+      //- Contact form
+      include ../include/contact-form.pug
+
+      //- Footer
+      include ../include/footer.pug
+
+      //- Page-specific JS
+      include ../include/scripts.pug
+
+block modals
