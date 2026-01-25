@@ -5,12 +5,9 @@ import { FastifyRequest, FastifyReply } from "fastify";
 export const landingController = {
 
   getLandingPage: async (request: FastifyRequest, reply: FastifyReply) => {
-    const user = request.session?.uid;
 
-    const returnTo = (request.query as any).returnTo || "/";
-    return reply.view("/auth/login.pug", {
-        pageTitle: "Login",
-        returnTo, user
+    return reply.view("/index.pug", {
+        pageTitle: "Visual Audio - Lighting, Sound, and AV Hire",
       }
     );
   },  
