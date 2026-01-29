@@ -18,7 +18,13 @@
 @use 'styles/components/scrollbar';
 @use 'styles/components/switches';
 
+// Layouts
+@use 'styles/layouts/footer';
+@use 'styles/layouts/nav';
+@use 'styles/layouts/preloader';
+
 // Page styles
+@use 'styles/pages/index';
 @use 'styles/pages/login';
 
 // Themes
