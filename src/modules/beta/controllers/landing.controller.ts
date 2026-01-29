@@ -4,12 +4,14 @@ import { FastifyRequest, FastifyReply } from "fastify";
 
 export const landingController = {
 
-  getLandingPage: async (request: FastifyRequest, reply: FastifyReply) => {
-
+  renderLandingPage: async (request: FastifyRequest, reply: FastifyReply) => {
+    
     return reply.view("/index.pug", {
         pageTitle: "Visual Audio - Lighting, Sound, and AV Hire",
+        user: request.user || null,
       }
     );
+
   },  
 
 };
