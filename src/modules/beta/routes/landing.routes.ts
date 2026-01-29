@@ -6,6 +6,6 @@ import { landingController } from "../controllers/landing.controller";
 export async function landingRoutes(fastify: FastifyInstance) {
 
   // Landing Page
-  fastify.get("/beta", landingController.getLandingPage);
+  fastify.get("/beta", landingController.renderLandingPage);
 
 }
