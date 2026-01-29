@@ -4,8 +4,34 @@ export default function initNavigation() {
 
   const services = document.querySelector<HTMLElement>("#services");
   const subMenu = document.querySelector<HTMLElement>(".sub-menu");
-  const subMenuLColumns = document.querySelectorAll<HTMLElement>(".sub-menu-column");
+  const subMenuColumns = document.querySelectorAll<HTMLElement>(".sub-menu-column");
+  const subMenuLinks = document.querySelectorAll<HTMLElement>(".sub-menu-link");
+  
+  // --- Submenu link hover animations
+  subMenuLinks.forEach(link => {
+    const subMenuRow = link.querySelector<HTMLElement>(".sub-menu-row");
 
+    if (!subMenuRow) return;
+
+    link.addEventListener("mouseenter", () => {
+      gsap.to(subMenuRow, {
+        x: 5,
+        duration: 0.3,
+        ease: "power3.out",
+      });
+    });
+
+    link.addEventListener("mouseleave", () => {
+      gsap.to(subMenuRow, {
+        x: 0,
+        duration: 0.3,
+        ease: "power3.out",
+      });
+    });
+
+  });
+
+  // --- Submenu dropdown (desktop only)
   if (!services || !subMenu) return;
 
   const bgContainer = subMenu.querySelector<HTMLElement>(".container");
@@ -28,7 +54,7 @@ export default function initNavigation() {
     );
 
     gsap.fromTo(
-      subMenuLColumns,
+      subMenuColumns,
       { x: 10, autoAlpha: 0 },
       { x: 0, autoAlpha: 1, duration: 0.3, ease: "power4.out", overwrite: "auto" }
     );
@@ -55,7 +81,12 @@ export default function initNavigation() {
 
   // --- Parallax background (desktop only)
   if (bgContainer) {
-    const maxMove = 12; // px, subtle movement
+    const maxMove = 12;       // max offset in px
+    const initialSize = 105;  // % when dropdown opens
+    const zoomedSize = 108;   // % while moving
+
+    // Initialize background
+    gsap.set(bgContainer, { backgroundSize: `${initialSize}%`, backgroundPosition: "50% 50%" });
 
     subMenu.addEventListener("mousemove", (e) => {
       if (!shouldUseHover() || !isOpen) return;
@@ -64,12 +95,14 @@ export default function initNavigation() {
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 
-      const xOffset = ((x / rect.width) - 0.5) * maxMove;
-      const yOffset = ((y / rect.height) - 0.5) * maxMove;
+      const xOffset = ((x / rect.width) - 0.05) * maxMove;
+      const yOffset = ((y / rect.height) - 0.05) * maxMove;
 
       gsap.to(bgContainer, {
-        backgroundPosition: `${50 + xOffset}% ${50 + yOffset}%`,
-        duration: 0.6,
+        backgroundPositionX: `${50 + xOffset}%`,
+        backgroundPositionY: `${50 + yOffset}%`,
+        backgroundSize: `${zoomedSize}%`,
+        duration: 0.8,
         ease: "power3.out",
         overwrite: "auto",
       });
@@ -77,11 +110,13 @@ export default function initNavigation() {
 
     subMenu.addEventListener("mouseleave", () => {
       gsap.to(bgContainer, {
-        backgroundPosition: `50% 50%`,
+        backgroundPosition: "50% 50%",
+        backgroundSize: `${initialSize}%`,
         duration: 0.8,
         ease: "power3.out",
       });
     });
+    
   }
 
   // --- Mobile / tablet accordion
@@ -139,4 +174,5 @@ export default function initNavigation() {
 
     toggleAccordion();
   });
+
 }
