@@ -1,0 +1,74 @@
+//- views/include/footer.pug
+
+#footer.container-fluid.py-5.bg-black.text-white(style="font-size")
+  .container
+
+    //- Footer links
+    .row 
+
+      //- Address and contact info
+      .col-12.col-md-6.col-lg-4
+        .d-flex.flex-row.align-items-center.justify-content-start.nav-logo
+          a(href="/beta/" style="text-decoration: none")
+            img.me-2(src="/img/logo.png" style="width: 36px")
+          a.d-block.text-white(href="/beta/" style="text-decoration: none; font-size: 20px; font-weight: 500") Visual<span style="font-weight: 300">Audio</span>
+        .d-block.pt-5
+          .lead.pb-2 London
+          div 15 Upper Richmond Road West
+          div London SW14 8QS
+          div.pt-3 Telephone: 020 7867 3921
+          div Email: info@visual-audio.co.uk
+        .d-block.pt-5
+          .lead.pb-2 New York
+          div 24 Ludlow St
+          div #3, New York NY 10013
+
+      .col-12.col-md-6.col-lg
+
+        //- Events Production
+        .fw-bold.pb-3 Events Production
+        a(href="") Private Events
+        a(href="") Product Launches
+        a(href="") Conferences
+        a(href="") Fashion Shows
+        a(href="") Theatrical Performances
+        a(href="") Immersive Concepts
+
+        //- Audio Visual Services
+        .fw-bold.pt-5.pb-3 Audio Visual Services
+        a(href="") Audio Visual Consultations
+        a(href="") Video &amp; Live Streaming
+        a(href="") Venue Solutions
+
+      .col-12.col-md-2.col-lg
+
+        //- Bespoke
+        .fw-bold.pb-3 Bespoke
+        a(href="") Full Production Services
+        a(href="") Set Design &amp; Build
+
+        //- AV Hire
+        .fw-bold.pt-5.pb-3 AV Hire
+        a(href="") Effects Equipment Hire
+        a(href="") Lighting Equipment Hire
+        a(href="") Sound Equipment Hire
+
+      .col-12.col-md-6.col-lg
+
+        //- Company
+        .fw-bold.pb-3 Company
+        a(href="") About Us
+        a(href="") Portfolio
+        a(href="") Contact
+        a(href="") Terns &amp; Conditions
+
+        //- My account
+        .fw-bold.pt-5.pb-3 My Account
+        a(href="") Sign In
+
+    //- Footer copyright
+    .row 
+
+      - currentYear = new Date().getFullYear()
+      .col-12.pt-5
+        .py-t(style="font-size: 10pt") &#169; Copyright #{currentYear} Visual Audio Ltd.
