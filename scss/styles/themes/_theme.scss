@@ -3,8 +3,9 @@
 // Dark theme
 html {
   --text: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
   --text-inverse: #181818;
-  --text-muted: #9c9c9c;
+  --text-muted: rgba(255, 255, 255, 0.5);
   --text-placeholder: #7a7a7a;
   --bg: #181818;
   --border: #5e5e5e;
@@ -22,6 +23,7 @@ html {
 html[data-theme="light"] {
   --text: #1a1a1a;
   --text-inverse: #ffffff;
+  --text-secondary: #4d4d4d;
   --text-muted: #696969;
   --text-placeholder: #a3a3a3;
   --bg: #ffffff;
@@ -65,6 +67,7 @@ html[data-theme="black"] {
   --scrollbar-bg: var(--brand-primary);
   --scrollbar-thumb: var(--brand-primary);
   --scrollbar-thumb-hover: var(--brand-primary);
+  --layout-breakpoint: 1200px;
   svg {
     fill: var(--icon);
   }
