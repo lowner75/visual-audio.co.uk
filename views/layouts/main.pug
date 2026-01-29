@@ -1,4 +1,4 @@
-//- views/beta/layouts/main.pug
+//- views/layouts/main.pug
 
 block variables
 
@@ -6,20 +6,24 @@ doctype html
 html(lang='en')
   head
     include ../include/head.pug 
+
   body
+
+    //- Preloader
+    include ../include/preloader.pug
 
     //- Navigation
     include ../include/nav.pug 
 
     //- Main content
-    main(id="luxy" role="main")
+    main(id="main" role="main")
       block content
 
       //- Contact form
-      include ../include/contact-form.pug
+        include ../include/contact-form.pug
 
       //- Footer
-      include ../include/footer.pug
+        include ../include/footer.pug
 
       //- Page-specific JS
       include ../include/scripts.pug
