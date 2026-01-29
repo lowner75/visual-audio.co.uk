@@ -1,7 +1,7 @@
 // src/middleware/session.ts
 
 import { FastifyRequest, FastifyReply } from "fastify";
-import { Session } from "../models/session.model";
+import { SessionModel } from "../models/session.model";
 
 export async function attachSession(request: FastifyRequest, reply: FastifyReply) {
   // Pick up session from either user or admin cookie
@@ -9,7 +9,7 @@ export async function attachSession(request: FastifyRequest, reply: FastifyReply
   if (!sessionId) return;
 
   // Fetch session from MongoDB
-  const session = await Session.findById(sessionId).lean();
+  const session = await SessionModel.findById(sessionId).lean();
   if (!session) return;
 
   // Attach session to request
