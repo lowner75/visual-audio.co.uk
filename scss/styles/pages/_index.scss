@@ -1,0 +1,46 @@
+// scss/styles/pages/_index.scss
+
+.hero {
+  z-index: 0;
+  position: relative;
+  min-height: calc(100vh); // -125px
+
+  @media (max-width: 768px) {
+    max-height: 100vh;
+  }
+}
+
+.mask {
+  z-index: 0;
+  position: relative;
+  mask-image: url(/images/logo-mask.png);
+  -webkit-mask-image: url(/images/logo-mask.png);
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  width: 100vw;
+  overflow: hidden;
+  min-height: calc(100vh - 125px);
+
+  @media (max-width: 768px) {
+    mask-size: auto 120%;
+    min-height: calc(100vh + 125px);
+  }
+}
+
+.mask video {
+  z-index: 0;
+  position: relative;
+  object-fit: cover;
+  object-position: 50% 50%;
+  max-width: 100vw;
+  min-height: calc(100vh - 125px);
+  @media (max-width: 768px) {
+    width: 100%;
+    min-height: calc(100vh + 125px);
+  }
+}
+
+section {
+  padding-top: Max(calc((100vw / 10) + 1em), 150px);
+  padding-bottom: Max(calc((100vw / 10) + 1em), 150px);
+}
