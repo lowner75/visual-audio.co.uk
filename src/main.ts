@@ -5,13 +5,15 @@
 // Module imports
 import initAuthClient from "./modules/users/auth/auth.client";
 import initMessagesModule from "./modules/messages/messages";
+import initBetaClient from "./modules/beta/client/index";
 
 document.addEventListener("DOMContentLoaded", () => {
   
   // Module initializations
   initMessagesModule();
   initAuthClient();
-
+  initBetaClient();
+  
   // --- Settings Panel ---
   const openBtn  = document.querySelector('#btn-settings');
   const closeBtn = document.querySelector('#btn-close-settings');
