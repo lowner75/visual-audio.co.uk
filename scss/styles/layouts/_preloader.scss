@@ -1,0 +1,31 @@
+// scss/styles/layouts/_preloader.scss
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 200;
+  will-change: transform ;
+  background-color: #000000;
+  overflow: hidden;
+
+  .preloader-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    will-change: transform;
+
+    img {
+      position: relative;
+      height: 60px;
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+ 
+}
