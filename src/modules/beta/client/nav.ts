@@ -3,7 +3,7 @@
 export default function initNavigation() {
 
   const services = document.querySelector<HTMLElement>("#services");
-  const subMenu = document.querySelector<HTMLElement>(".sub-menu");
+  const servicesSubMenu = document.querySelector<HTMLElement>(".sub-menu-services");
   const subMenuColumns = document.querySelectorAll<HTMLElement>(".sub-menu-column");
   const subMenuLinks = document.querySelectorAll<HTMLElement>(".sub-menu-link");
   
@@ -32,15 +32,15 @@ export default function initNavigation() {
   });
 
   // --- Submenu dropdown (desktop only)
-  if (!services || !subMenu) return;
+  if (!services || !servicesSubMenu) return;
 
-  const bgContainer = subMenu.querySelector<HTMLElement>(".container");
+  const bgContainer = servicesSubMenu.querySelector<HTMLElement>(".container");
   const shouldUseHover = () => window.innerWidth >= 1200;
   let isOpen = false;
 
   const isInsideMenu = (target: EventTarget | null | undefined) =>
     target instanceof HTMLElement &&
-    (target.closest("#services") || target.closest(".sub-menu"));
+    (target.closest("#services") || target.closest(".sub-menu-services"));
 
   // --- Open submenu
   const openDropdown = () => {
@@ -48,7 +48,7 @@ export default function initNavigation() {
     isOpen = true;
 
     gsap.fromTo(
-      subMenu,
+      servicesSubMenu,
       { y: 10, autoAlpha: 0 },
       { y: 0, autoAlpha: 1, duration: 0.25, ease: "power2.out", overwrite: "auto" }
     );
@@ -66,7 +66,7 @@ export default function initNavigation() {
     if (isInsideMenu(related) || !isOpen || !shouldUseHover()) return;
     isOpen = false;
 
-    gsap.to(subMenu, { y: 10, autoAlpha: 0, duration: 0.2, ease: "power2.in", overwrite: "auto" });
+    gsap.to(servicesSubMenu, { y: 10, autoAlpha: 0, duration: 0.2, ease: "power2.in", overwrite: "auto" });
 
     if (bgContainer) {
       gsap.to(bgContainer, { backgroundPosition: `50% 50%`, duration: 0.8, ease: "power3.out" });
@@ -76,8 +76,8 @@ export default function initNavigation() {
   // --- Event listeners for hover
   services.addEventListener("mouseenter", openDropdown);
   services.addEventListener("mouseleave", closeDropdown);
-  subMenu.addEventListener("mouseenter", openDropdown);
-  subMenu.addEventListener("mouseleave", closeDropdown);
+  servicesSubMenu.addEventListener("mouseenter", openDropdown);
+  servicesSubMenu.addEventListener("mouseleave", closeDropdown);
 
   // --- Parallax background (desktop only)
   if (bgContainer) {
@@ -88,10 +88,10 @@ export default function initNavigation() {
     // Initialize background
     gsap.set(bgContainer, { backgroundSize: `${initialSize}%`, backgroundPosition: "50% 50%" });
 
-    subMenu.addEventListener("mousemove", (e) => {
+    servicesSubMenu.addEventListener("mousemove", (e) => {
       if (!shouldUseHover() || !isOpen) return;
 
-      const rect = subMenu.getBoundingClientRect();
+      const rect = servicesSubMenu.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 
@@ -108,7 +108,7 @@ export default function initNavigation() {
       });
     });
 
-    subMenu.addEventListener("mouseleave", () => {
+    servicesSubMenu.addEventListener("mouseleave", () => {
       gsap.to(bgContainer, {
         backgroundPosition: "50% 50%",
         backgroundSize: `${initialSize}%`,
@@ -149,7 +149,7 @@ export default function initNavigation() {
   toggleAccordion();
 
   window.addEventListener("resize", () => {
-    gsap.set(".sub-menu", { autoAlpha: 0 });
+    gsap.set(".sub-menu-services", { autoAlpha: 0 });
 
     const isMobile = !shouldUseHover();
     gsap.set(document.documentElement, { height: "inherit", overflowY: "auto" });
@@ -173,6 +173,7 @@ export default function initNavigation() {
     }
 
     toggleAccordion();
+
   });
 
 }
