@@ -6,7 +6,7 @@
 import "./modules/legacy/main";
 
 // Import and initialize messages module
-import initMessagesModule from "./modules/messages/messages";
+import initMessagesModule from "./modules/messages/messages.client";
 
 document.addEventListener("DOMContentLoaded", () => {
   
