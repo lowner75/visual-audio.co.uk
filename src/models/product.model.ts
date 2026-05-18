@@ -19,6 +19,7 @@ export interface IProduct extends Document {
   category: string;
   subCategory?: string;
   supplier: string;
+  isActive?: boolean;
 }
 
 // Specification sub-schema
@@ -40,10 +41,9 @@ const ProductSchema: Schema<IProduct> = new Schema({
   specifications: [SpecificationSchema],
   category: { type: String, required: true },
   subCategory: { type: String },
-  supplier: { type: String, required: true }
+  supplier: { type: String, required: true },
+  isActive: { type: Boolean, default: true },
 });
 
 // Model
-const ProductModel: Model<IProduct> = mongoose.model<IProduct>("Product", ProductSchema);
-
-export default ProductModel;
+export const ProductModel: Model<IProduct> = mongoose.model<IProduct>("Product", ProductSchema);
