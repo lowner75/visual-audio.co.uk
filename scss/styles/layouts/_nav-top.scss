@@ -1,0 +1,69 @@
+// scss/styles/layouts/_nav.scss
+
+.nav {
+  position: relative;
+  z-index: 250;
+  opacity: 0;
+  visibility: hidden;
+  background: #000000;
+
+  a {
+    cursor: pointer;
+    color: var(--text) !important;
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__left {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    @media(min-width: 1200px) {
+      padding-left: 16px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    &-img {
+      width: 36px;
+      margin-right: 0.5rem;
+    }
+
+    &-text {
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.5rem;
+
+    @media(min-width: 1200px) {
+      padding-right: 16px;
+    }
+  }
+
+  &__menu-btn-container {
+    display: none;
+
+    @media (max-width: var(--layout-breakpoint)) {
+      display: flex;
+    }
+  }
+
+}
