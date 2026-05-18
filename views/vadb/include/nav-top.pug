@@ -1,0 +1,62 @@
+//- views/vadb/include/nav-top.pug
+
+.nav-vadb.position-fixed.w-100.bg-black(style="top: 0; left: 0; right: 0; z-index: 200")
+  .container-fluid.px-3.px-md-4.py-3
+    .d-flex.flex-row.align-items-center
+
+      //- VADB mobile menu ...
+      .vadb-mobile-menu.d-block.d-md-none.mx-1(style="z-index: 5000")
+        .menu-btn-container(style="z-index: 2500")
+          .menu-btn.not-active
+            span 
+            span 
+            span
+
+      //- VADB logo ...
+      .vadb-logo.d-none.d-md-block(style="width: 375px")
+        .d-flex.align-items-center.nav-logo
+          a(href="/beta/" style="text-decoration: none")
+            img.me-2(src="/images/logo.png" style="width: 30px")
+          a.d-none.d-md-block.text-white(href="/beta/" style="margin-top: 2px; text-decoration: none; font-size: 18px; font-weight: 500; line-height: 16px") Visual<span style="font-weight: 300">Audio</span>
+
+      //- VADB search bar ...
+      .vadb-search-bar
+
+        //- VADB search bar dropdown menu / search results ...
+        .vadb-search-dropdown.rounded.shadow.mx-3.pt-2.pb-3.fw-bold
+          .px-3.text-secondary.fw-bold.mb-2(style="font-size: 10pt") Shortcuts
+          .fw-normal
+            a.text-decoration-none.d-block.px-3.py-2(href="/beta/VADB/")
+              .d-flex.align-items-center
+                .d-flex.align-items-center.justify-content-center.rounded.me-3(style="height: 30px; width: 30px; background: var(--va-color)")
+                  i.fas.fa-database.text-white
+                .text-white Dashboard
+            a.text-decoration-none.d-block.px-3.py-2(href="/beta/VADB/products/add-new-product/")
+              .d-flex.align-items-center
+                .d-flex.align-items-center.justify-content-center.rounded.me-3(style="height: 30px; width: 30px; background: var(--va-color)")
+                  i.fas.fa-cubes.text-white
+                .text-white Add New Product
+            a.text-decoration-none.d-block.px-3.py-2(href="/beta/VADB/users/add-new-user/")
+              .d-flex.align-items-center
+                .d-flex.align-items-center.justify-content-center.rounded.me-3(style="height: 30px; width: 30px; background: var(--va-color)")
+                  i.fas.fa-user.text-white
+                .text-white Add New User
+          .mt-3.px-3(style="border-top: solid 1px rgba(255,255,255,0.1)")
+            .pt-2.text-secondary.fw-bold.mb-2(style="font-size: 10pt") Search Results
+        
+
+        //- Search bar input ...
+        .d-flex.align-items-center.w-100
+          input(id="vadb-search" name="vadb-search" placeholder="Search" style="padding-left: 50px")
+
+      //- VADB user ...
+      .vadb-user.d-none.d-md-block(style="width: 375px")
+        - const initials = user.firstName.charAt(0) + user.lastName.charAt(0)
+        a.text-decoration-none(href=`/beta/VADB/users/view/${user.id}`)
+          .d-flex.align-items-center.justify-content-end
+            .rounded-circle.me-md-3(style="height: 38px; width: 38px; background: url(/images/user-img.jpg) no-repeat 50% 50%")
+              .d-flex.align-items-center.justify-content-center.text-white.fw-bold(style="height: 38px; width: 38px; font-size: 11pt") #{initials}
+            .d-none.d-md-block.text-end(style="line-height: 1.4")
+              .fw-bold.text-white(style="font-size: 11pt") #{user.firstName} #{user.lastName}
+              div(style="font-size: 9pt; line-height: 11pt; color: rgba(255,255,255,0.5)") Administrator
+
