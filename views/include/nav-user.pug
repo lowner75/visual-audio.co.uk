@@ -1,0 +1,28 @@
+//- views/include/nav-user.pug
+
+  #user-icon.position-relative
+    if user && user.isAdmin
+      a.py-4(href="/beta/VADB/")
+        svg.icon(viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: var(--text);")
+          use(xlink:href="/images/icons/icon-user.svg")
+    else 
+      a.py-4(href="/beta/auth/login")
+        svg.icon(viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: var(--text);")
+          use(xlink:href="/images/icons/icon-user.svg")
+    #user-dropdown.position-absolute.rounded
+      .flex.flex-row.justify-content-start.p-3(style="min-width: 300px; border-bottom: solid 1px var(--border-color)")
+        .flex.rounded-circle.fw-bold.me-3(style="width: 30px; height: 30px; font-size: 12px; background-color: var(--va-color); color: #fff") #{Array.from(user.firstName)[0]}#{Array.from(user.lastName)[0]}
+        .d-block(style="line-height: 1.3")
+          span.fw-bold(style="font-size: 14px") #{user.firstName} #{user.lastName}<br/>
+          span(style="font-size: 10px") #{user.email}
+      .d-block.py-3(style="border-bottom: solid 1px var(--border-color)")
+        .px-3.pb-2.flex.flex-row.justify-content-start.theme-link.theme-light(onclick='changeTheme("light")')
+          .fa-regular.fa-sun(style="margin-right: 12px")
+          .me-3 Light Theme
+        .px-3.pb-0.flex.flex-row.justify-content-start.theme-link.theme-dark(onclick='changeTheme("dark")')
+          .fa-regular.fa-moon(style="margin-left: 2px; margin-right: 13px")
+          .me-3 Dark Theme (Default)
+      a.theme-link(href="/logout/" style="font-size: 10pt")
+        .p-3.flex.flex-row.justify-content-start
+          .fa-solid.fa-arrow-right-from-bracket.me-2(style="font-size: 10pt")
+          div Log Out
