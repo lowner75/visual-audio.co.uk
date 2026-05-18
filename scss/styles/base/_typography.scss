@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  font-size: 10pt;
+  font-size: 12pt;
   line-height: 1.6;
   color: var(--text);
 }
@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
-h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h2 { font-size: clamp(2rem, 4vw, 2.5rem); }
 h3 { font-size: 1.75rem; }
 h4 { font-size: 1.4rem; }
 h5 { font-size: 1.1rem; }
