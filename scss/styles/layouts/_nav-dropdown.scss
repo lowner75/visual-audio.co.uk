@@ -1,0 +1,138 @@
+// scss/styles/layouts/_nav-services.scss
+
+nav {
+
+  position: relative;
+
+  .sub-menu-system {
+    position: absolute;
+    top: calc(100% - 10px);
+    left: 0;
+    width: 100%;
+    z-index: 2500;
+  }
+
+  .sub-menu-system .container {
+    position: relative;
+  }
+
+  .sub-menu-services {
+    background-image: url("/images/bg-nav-services.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .sub-menu-av-hire {
+    background-image: url("/images/bg-nav-av-hire.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  // Hover buffer
+  /*.sub-menu {
+    &::before {
+      content: "";
+      position: absolute;
+      top: -16px;
+      left: 0;
+      right: 0;
+      height: 16px;
+    }
+  }*/
+
+  .sub-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    line-height: 1.4;
+    border-radius: 0.5rem;
+    max-width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+
+    img {
+      margin-top: -2px;
+    }
+
+    .container {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px px rgba(0, 0, 0, 0.3);
+    }
+
+    .accordion {
+      background-color: var(--background-color);
+
+      .accordion-item {
+        color: #6c757d !important;
+        background-color: var(--background-color);
+
+        .sub-menu-column-title {
+          color: var(--text);
+          border-bottom: solid 1px var(--border-color);
+          pointer-events: none;
+        }
+
+        .accordion-button {
+          background-color: var(--background-color);
+          box-shadow: none;
+        }
+      }
+    }
+
+    ul, li {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    .sub-menu-link, .sub-menu-link a {
+      color: var(--text-muted) !important;
+      border-bottom: solid 1px var(--border-color);
+    }
+
+    .sub-menu-link:hover .sub-menu-title, .sub-menu-link.hover .sub-menu-title {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .sub-menu-title {
+      display: inline-block;
+      font-weight: bold;
+      color: var(--text-secondary);
+      transition: all 0.3s ease;
+    }
+
+    .sub-menu-text {
+      font-size: 10pt;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 1199.98px) {
+      position: relative;
+      border-radius: 0;
+
+      .container {
+        position: fixed;
+        left: auto;
+        right: 0;
+        height: 100vh;
+        overflow-y: scroll;
+        width: Min(100%, 500px);
+        margin-top: -7px;
+        border-radius: 0;
+      }
+    }
+  }
+
+}
