@@ -1,14 +1,13 @@
 // src/modules/beta/client/index.ts
 
 import runPreloader from "./preloader";
-import initNavigation from "./nav";
 import initSmoothScroll from "./smooth-scroll";
+import initNavigation from "./nav";
 
 export default function initBetaClient() {
   
-  // Client-side functionalities for beta module
   runPreloader();
-  initNavigation();
   initSmoothScroll();
+  initNavigation();
 
 };
