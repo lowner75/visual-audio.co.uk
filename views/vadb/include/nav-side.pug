@@ -1,0 +1,68 @@
+//- views/vadb/include/nav-side.pug
+
+//- VADB slide out menu ...
+.sub-menu.position-fixed.bg-black(Style="top: 0; left: 0; right: 0; bottom: 0; opacity: 0; visibility: hidden; z-index: 100")
+  .d-flex.align-items-center.justify-content-start.h-100(style="margin-top: 0px")
+    .d-inline-block.px-4
+      a.text-decoration-none(id="vadb-home-link" href="/beta/" style="font-size: 15pt")
+        .d-flex.flex-row.align-items-center.py-3
+          .text-center(style="width: 50px")
+            i.fas.fa-house.me-3
+          .text-white.fw-normal Visual Audio Website
+      a.text-decoration-none(id="vadb-dashboard-link" href="/beta/VADB/" style="font-size: 15pt")
+        .d-flex.flex-row.align-items-center.py-3
+          .text-center(style="width: 50px")
+            i.fas.fa-database.me-3
+          .text-white.fw-normal VADB Dashboard
+      a.text-decoration-none(id="vadb-products-link" href="/beta/VADB/products/" style="font-size: 15pt")
+        .d-flex.flex-row.align-items-center.py-3
+          .text-center(style="width: 50px")
+            i.fas.fa-cubes.me-3
+          .text-white.fw-normal Products
+      a.text-decoration-none(id="vadb-users-link" href="/beta/VADB/users/" style="font-size: 15pt")
+        .d-flex.flex-row.align-items-center.py-3
+          .text-center(style="width: 50px")
+            i.fas.fa-users.me-3
+          .text-white.fw-normal Users
+      a.text-decoration-none(id="vadb-user-logs-link" href="/beta/VADB/user-logs/" style="font-size: 15pt")
+        .d-flex.flex-row.align-items-center.py-3
+          .text-center(style="width: 50px")
+            i.fas.fa-chart-simple.me-3
+          .text-white.fw-normal User Logs
+      a.text-decoration-none(href="/logout/" style="font-size: 15pt")
+        .d-flex.flex-row.align-items-center.py-3
+          .text-center(style="width: 50px")
+            i.fas.fa-arrow-right-from-bracket.me-3
+          .text-white.fw-normal Logout
+
+//- VADB side menu ...
+.vadb-nav-side.position-fixed.d-none.d-md-block(style="top: 65px; height: 100%; border-right: solid 1px rgba(255,255,255,0.05)")
+  .px-3.mt-3.text-center
+    .vadb-side-link
+      a(id="vadb-home-link" href="/beta/")
+        i.fas.fa-house
+        .vadb-tooltip.text-white Visual Audio Website
+    .vadb-side-link
+        i.fas.fa-ellipsis
+    .vadb-side-link
+      a(id="vadb-dashboard-link" href="/beta/VADB/")
+        i.fas.fa-database
+        .vadb-tooltip.text-white VADB Dashboard
+    .vadb-side-link
+      a(id="vadb-products-link" href="/beta/VADB/products/")
+        i.fas.fa-cubes
+        .vadb-tooltip.text-white Products
+    .vadb-side-link
+      a(id="vadb-users-link" href="/beta/VADB/users/")
+        i.fas.fa-users
+        .vadb-tooltip.text-white Users
+    .vadb-side-link
+      a(id="vadb-user-logs-link" href="/beta/VADB/user-logs/")
+        i.fas.fa-chart-simple
+        .vadb-tooltip.text-white User Logs
+    .vadb-side-link
+        i.fas.fa-ellipsis
+    .vadb-side-link
+      a(href="/logout/")
+        i.fas.fa-arrow-right-from-bracket
+        .vadb-tooltip.text-white Logout
