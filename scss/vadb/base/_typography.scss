@@ -1,0 +1,18 @@
+// scss/vadb/base/_typography.scss
+
+body {
+	color: #fff;
+	font-size: 11pt;
+	font-family: "Roboto", sans-serif;
+}
+
+@for $i from 1 through 6 {
+	h#{$i} {
+		color: #fff;
+		font-family: "Roboto", sans-serif;
+		font-weight: 500;
+		padding-bottom: 1rem;
+		line-height: 1.2;
+		letter-spacing: -0.035em;
+	}	
+}
