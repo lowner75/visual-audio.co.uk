@@ -4,7 +4,7 @@
 
 // Module imports
 import initAuthClient from "./modules/users/auth/auth.client";
-import initMessagesModule from "./modules/messages/messages";
+import initMessagesModule from "./modules/messages/messages.client";
 import initBetaClient from "./modules/beta/client/index";
 
 document.addEventListener("DOMContentLoaded", () => {
