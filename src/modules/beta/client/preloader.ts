@@ -11,7 +11,7 @@ export default function runPreloader() {
   const video = document.querySelector<HTMLVideoElement>("#landing-hero-video");
 
   // If any required element is missing, abort
-  if (!preloader || !nav || !mask || !menuBtn || !heroText) return;
+  if (!preloader || !nav || !menuBtn) return;
 
   document.documentElement.style.setProperty("overflow", "hidden", "important");
   document.body.style.setProperty("overflow", "hidden", "important");
@@ -21,8 +21,8 @@ export default function runPreloader() {
     history.scrollRestoration = "manual";
   }
 
-  // Remove class
-  nav.classList.remove("bg-black");
+  // Remove background color from nav for preloader
+  gsap.set(".nav", { backgroundColor: "transparent" });
 
   // GSAP timeline
   const tl = gsap.timeline();
@@ -43,28 +43,38 @@ export default function runPreloader() {
         );
 
         gsap.to("#preloader", { autoAlpha: 0, duration: 0.5, delay: 0.5 });
+
+        if (mask) {
+          gsap.fromTo(
+            ".mask",
+            { scale: 5 },
+            { scale: 1, delay: 0.25, duration: 1, ease: "power4.in", onComplete: () => {
+              // Restore nav background color
+              gsap.set("nav", { backgroundColor: "#000000" });
+            }}
+          );
+        }
+
         gsap.fromTo(
-          ".mask",
-          { scale: 5 },
-          { scale: 1, delay: 0.25, duration: 1, ease: "power4.in", onComplete: () => {
-            nav.classList.add("bg-black");
-          }}
+          "nav",
+          { y: 20, autoAlpha: 0 },
+          { y: 0, autoAlpha: 1, duration: 1.5, delay: 0.5, ease: "power4.out" }
         );
+        
         gsap.fromTo(
           ".menu-btn-container",
           { x: 20, autoAlpha: 0 },
           { x: 0, autoAlpha: 1, duration: 1.5, delay: 0.5, ease: "power4.out" }
         );
-        gsap.fromTo(
-          "nav",
-          { x: 20, autoAlpha: 0 },
-          { x: 0, autoAlpha: 1, duration: 1.5, delay: 0.5, ease: "power4.out" }
-        );
-        gsap.fromTo(
-          ".hero-text",
-          { y: 20, autoAlpha: 0 },
-          { y: 0, autoAlpha: 1, duration: 1.5, delay: 0.5, ease: "power4.out" }
-        );
+
+        if (heroText) {
+          gsap.fromTo(
+            ".hero-text",
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 1.5, delay: 0.5, ease: "power4.out" }
+          );
+        }
+
       },
     }
   );
