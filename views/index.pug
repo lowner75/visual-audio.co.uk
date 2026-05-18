@@ -2,282 +2,283 @@
 
 extends layouts/main
 
+block variables
+  - const bodyClass = 'landing-page'
+  - const bodyPage = 'landing'
+
 block content
 
-  body.bg-black
+  //- Hero ...
+  section.hero(data-theme="dark")
 
-    //- Hero ...
-    .hero.bg-black
+    //- Hero mask ...
+    .mask
 
-      //- Hero mask ...
-      .mask
+      //- Hero video ...
+      video(id="landing-hero-video" loop muted playsinline poster="/images/videos/landing-hero-placeholder.jpg")
+        source(src="/images/videos/landing-hero.mp4" type="video/mp4")
 
-        //- Hero video ...
-        video(id="landing-hero-video" loop muted playsinline poster="images/videos/landing-hero-placeholder.jpg")
-          source(src="images/videos/landing-hero.mp4" type="video/mp4")
+    //- Hero text ...
+    .container
+      .hero-text.position-absolute(style="top: 220px")
+        .container
+          .row
+            .col-md-8.col-lg-7.order-2.order-md-1(style="text-shadow: 0px 0px 5px rgba(0,0,0,0.25)")
+              
+              h1.title-font.pt-5.mb-5(style="font-weight: 400; max-width: 90%") Welcome to 
+                span(style="font-weight: 600") Visual
+                span(style="font-weight: 300") Audio
+              
+              div.lead(style="font-size: 1.5em; font-weight: 400; color: #fff")
+                span(style="font-weight: 600") Visual
+                span(style="font-weight: 300") Audio 
+                span is one of the UK's leading <b>lighting</b>, <b>sound</b> and <b>Audio Visual</b> (<b>AV</b>) events production companies. We create unforgettable experiences and outstanding events.
 
-      //- Hero text ...
-      .container
-        .hero-text.position-absolute(style="top: 180px")
-          .container
-            .row
-              .col-md-8.col-lg-7.order-2.order-md-1(style="text-shadow: 0px 0px 5px rgba(0,0,0,0.25)")
-                
-                h1.title-font.pt-5.mb-5(style="font-weight: 400; max-width: 90%") Welcome to 
-                  span(style="font-weight: 600") Visual
-                  span(style="font-weight: 300") Audio
-                
-                div(style="font-size: 1.5em; font-weight: 400")
-                  span(style="font-weight: 700") Visual
-                  span(style="font-weight: 300") Audio 
-                  span is one of the UK's leading <b>lighting</b>, <b>sound</b> and <b>Audio Visual</b> (<b>AV</b>) events production companies. We create unforgettable experiences and outstanding events.
-
-                //- Down arrow button ...
-                //-a(href="#intro")
-                .position.absolute.pt-5.mt-3(style="left: 50%")
-                    a.d-flex.align-items-center.justify-content-center.rounded-circle(style="height: 70px; width: 70px; border: solid 1px #666")
-                      svg.icon(viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: var(--text);")
-                        use(xlink:href="/images/icons/icon-arrow-down.svg")
+              //- Down arrow button ...
+              //-a(href="#intro")
+              .position.absolute.pt-5.mt-3(style="left: 50%")
+                  a.d-flex.align-items-center.justify-content-center.rounded-circle(style="height: 70px; width: 70px; border: solid 1px #666")
+                    svg.icon(viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: var(--text);")
+                      use(xlink:href="/images/icons/icon-arrow-down.svg")
 
     //- Intro ...
-      section.container.bg-black(id="intro" style="max-width: 700px")
-        .row
-          .col-12.text-center
-            .lead.pb-3.text-secondary(style="font-weight: 300") Why VisualAudio 
-            h1.text-white(style="font-weight: 300") Lighting, Sound, and Audio Visual. We provide a single port of call for everything AV. We collaborate. We create.
-            .mt-5
-              a.d-inline.px-5.py-3.border.text-white(href="#" style="text-decoration: none") ABOUT US
-            .pb-5
+    section.container.py-5.bg-black(id="intro" style="max-width: 800px" data-theme="dark")
+      .row.py-5
+        .col-12.text-center.py-5
+          .lead.pb-3.text-secondary(style="font-weight: 300") Why VisualAudio 
+          h1.text-white(style="font-weight: 300") Lighting, Sound, and Audio Visual. We provide a single port of call for everything AV.<br>We collaborate. We create.
+          .mt-5
+            a.d-inline.px-5.py-3.border.text-white.rounded-pill(href="#" style="text-decoration: none") ABOUT US
 
-  //- Services ...
-    .container-fluid.bg-white.section(id="services")
-      .container.flex
-        .row
-          .col-12.text-center(style="max-width: 700px")
-            .lead.pb-3.text-secondary(style="font-weight: 300") Audio Visual Services 
-            h1.text-dark(style="font-weight: 300") From seamless event production, to state-of-the-art AV installations, and immersive digital experiences, we have the expertise and technology to make it happen.
-            .pb-5
+//- Services ...
+  .container-fluid.bg-white.section(id="services")
+    .container.flex
+      .row
+        .col-12.text-center(style="max-width: 700px")
+          .lead.pb-3.text-secondary(style="font-weight: 300") Audio Visual Services 
+          h1.text-dark(style="font-weight: 300") From seamless event production, to state-of-the-art AV installations, and immersive digital experiences, we have the expertise and technology to make it happen.
+          .pb-5
 
-      .container.text-dark(style="max-width: 1200px")
-        .row.gx-3
-          .col-12.col-lg-4
-            .h-100.rounded-0
-              .p-2
-                .px-3.pt-2.pb-4
-                  .d-flex.align-items-center
-                    img.py-3.me-2(src="/img/icons/menu-light/icon-menu-01.png" style="height: 50px; width: auto")
-                    .lead.fw-bold Private Events
-                  .text-secondary.pb-3 Unforgettable private events with a seamless service adding a personalized touch. Let us bring your vision to life in an elegant style.
-                  a(href="") Learn more about Private Events
-          .col-12.col-lg-4
-            .h-100.rounded-0
-              .p-2
-                .px-3.pt-2.pb-4
-                  .d-flex.align-items-center
-                    img.py-3.me-2(src="/img/icons/menu-light/icon-menu-02.png" style="height: 50px; width: auto")
-                    .lead.fw-bold Product Launches
-                  .text-secondary.pb-3 Activate your brand in style with a bespoke product launch, enhanced by state-of-the-art audiovisual (AV) technology. Craft an immersive experience that captivates your audience and leaves an enduring impression of sophistication and innovation.
-                  a(href="") Learn more about Product Launches
-          .col-12.col-lg-4
-            .h-100.rounded-0
-              .p-2
-                .px-3.pt-2.pb-4
-                  .d-flex.align-items-center
-                    img.py-3.me-2(src="/img/icons/menu-light/icon-menu-03.png" style="height: 50px; width: auto")
-                    .lead.fw-bold Conferences
-                  .text-secondary.pb-3 Elevating conferences globally with cutting-edge AV technology and masterful production, creating an unforgettable experience of excellence and impact. Every detail is flawlessly executed, ensuring a seamless and visually stunning event.
-                  a(href="") Learn more about Conferences
-        .row.gx-3.py-lg-3
-          .col-12.col-lg-4
-            .h-100
-              .p-2
-                .px-3.pt-2.pb-4
-                  .d-flex.align-items-center
-                    img.py-3.m-2(src="/img/icons/menu-light/icon-menu-04.png" style="width: 30px")
-                    .lead.fw-bold Fashion Shows
-                  .py-2.text-secondary.pb-3 With a wealth of experience, we have flawlessly executed fashion shows for some of the industry's most renowned names. From Concept to reality. Capturing every detail.
-                  a(href="") Learn more about Fashion Shows
-          .col-12.col-lg-4
-            .h-100
-              .p-2
-                .px-3.pt-2.pb-4
-                  .d-flex.align-items-center
-                    img.py-3.me-3(src="/img/icons/menu-light/icon-menu-05.png" style="width: 30px")
-                    .lead.fw-bold Theatrical Performances
-                  .py-2.text-secondary.pb-3 We deliver exceptional audiovisual (AV) solutions tailored for the theatre and arts sectors. From immersive sound to breathtaking visuals, our expertise brings every performance to life with precision and artistry.
-                  a(href="") Learn more about Theatrical Performances
-          .col-12.col-lg-4
-            .h-100
-              .p-2
-                .px-3.pt-2.pb-4
-                  .d-flex.align-items-center
-                    img.py-3.me-3(src="/img/icons/menu-light/icon-menu-06.png" style="width: 30px")
-                    .lead.fw-bold Immersive Events
-                  .py-2.text-secondary.pb-3 Crafting extraordinary, immersive experiences with cutting-edge audiovisual (AV) technology. Where innovation marries elegance, captivating the aspirational.
-                  a(href="") Learn more about Immersive Events
+    .container.text-dark(style="max-width: 1200px")
+      .row.gx-3
+        .col-12.col-lg-4
+          .h-100.rounded-0
+            .p-2
+              .px-3.pt-2.pb-4
+                .d-flex.align-items-center
+                  img.py-3.me-2(src="/img/icons/menu-light/icon-menu-01.png" style="height: 50px; width: auto")
+                  .lead.fw-bold Private Events
+                .text-secondary.pb-3 Unforgettable private events with a seamless service adding a personalized touch. Let us bring your vision to life in an elegant style.
+                a(href="") Learn more about Private Events
+        .col-12.col-lg-4
+          .h-100.rounded-0
+            .p-2
+              .px-3.pt-2.pb-4
+                .d-flex.align-items-center
+                  img.py-3.me-2(src="/img/icons/menu-light/icon-menu-02.png" style="height: 50px; width: auto")
+                  .lead.fw-bold Product Launches
+                .text-secondary.pb-3 Activate your brand in style with a bespoke product launch, enhanced by state-of-the-art audiovisual (AV) technology. Craft an immersive experience that captivates your audience and leaves an enduring impression of sophistication and innovation.
+                a(href="") Learn more about Product Launches
+        .col-12.col-lg-4
+          .h-100.rounded-0
+            .p-2
+              .px-3.pt-2.pb-4
+                .d-flex.align-items-center
+                  img.py-3.me-2(src="/img/icons/menu-light/icon-menu-03.png" style="height: 50px; width: auto")
+                  .lead.fw-bold Conferences
+                .text-secondary.pb-3 Elevating conferences globally with cutting-edge AV technology and masterful production, creating an unforgettable experience of excellence and impact. Every detail is flawlessly executed, ensuring a seamless and visually stunning event.
+                a(href="") Learn more about Conferences
+      .row.gx-3.py-lg-3
+        .col-12.col-lg-4
+          .h-100
+            .p-2
+              .px-3.pt-2.pb-4
+                .d-flex.align-items-center
+                  img.py-3.m-2(src="/img/icons/menu-light/icon-menu-04.png" style="width: 30px")
+                  .lead.fw-bold Fashion Shows
+                .py-2.text-secondary.pb-3 With a wealth of experience, we have flawlessly executed fashion shows for some of the industry's most renowned names. From Concept to reality. Capturing every detail.
+                a(href="") Learn more about Fashion Shows
+        .col-12.col-lg-4
+          .h-100
+            .p-2
+              .px-3.pt-2.pb-4
+                .d-flex.align-items-center
+                  img.py-3.me-3(src="/img/icons/menu-light/icon-menu-05.png" style="width: 30px")
+                  .lead.fw-bold Theatrical Performances
+                .py-2.text-secondary.pb-3 We deliver exceptional audiovisual (AV) solutions tailored for the theatre and arts sectors. From immersive sound to breathtaking visuals, our expertise brings every performance to life with precision and artistry.
+                a(href="") Learn more about Theatrical Performances
+        .col-12.col-lg-4
+          .h-100
+            .p-2
+              .px-3.pt-2.pb-4
+                .d-flex.align-items-center
+                  img.py-3.me-3(src="/img/icons/menu-light/icon-menu-06.png" style="width: 30px")
+                  .lead.fw-bold Immersive Events
+                .py-2.text-secondary.pb-3 Crafting extraordinary, immersive experiences with cutting-edge audiovisual (AV) technology. Where innovation marries elegance, captivating the aspirational.
+                a(href="") Learn more about Immersive Events
 
-      //-.container.text-dark(style="max-width: 1200px")
-        .row.gx-3
-          .col-12.col-lg-4
-            .card.h-100.shadow.rounded-0
-              .card-body.p-2
-                img.d-block.pb-3.rounded-0(src="/img/placeholder.jpg" style="height: 200px; width: 100%; object-fit: cover")
-                .px-3.pt-2.pb-4
-                  .d-flex.align-items-center
-                    img.py-3.me-2(src="/img/icons/menu-light/icon-menu-01.png" style="height: 50px; width: auto")
-                    .lead.fw-bold Private Events
-                  .text-secondary.pb-3 Unforgettable private events with a seamless service adding a personalized touch. Let us bring your vision to life in an elegant style.
-                  a(href="") View Private Events
-          .col-12.col-lg-4
-            .card.h-100.shadow.rounded-0
-              .card-body.p-2
-                img.d-block.pb-3.rounded-0(src="/img/placeholder.jpg" style="height: 200px; width: 100%; object-fit: cover")
-                .px-3.pt-2.pb-4
-                  .d-flex.align-items-center
-                    img.py-3.me-2(src="/img/icons/menu-light/icon-menu-02.png" style="height: 50px; width: auto")
-                    .lead.fw-bold Product Launches
-                  .text-secondary.pb-3 Activate your brand in style with a bespoke product launch, enhanced by state-of-the-art audiovisual (AV) technology. Craft an immersive experience that captivates your audience and leaves an enduring impression of sophistication and innovation.
-                  a(href="") View Product Launches
-          .col-12.col-lg-4
-            .card.h-100.shadow.rounded-0
-              .card-body.p-2
-                img.d-block.pb-3.rounded-0(src="/img/placeholder.jpg" style="height: 200px; width: 100%; object-fit: cover")
-                .px-3.pt-2.pb-4
-                  .d-flex.align-items-center
-                    img.py-3.me-2(src="/img/icons/menu-light/icon-menu-03.png" style="height: 50px; width: auto")
-                    .lead.fw-bold Conferences
-                  .text-secondary.pb-3 Elevating conferences globally with cutting-edge AV technology and masterful production, creating an unforgettable experience of excellence and impact. Every detail is flawlessly executed, ensuring a seamless and visually stunning event.
-                  a(href="") View Conferences
-        //-.row.gx-3.py-lg-3
-          .col-12.col-lg-4
-            .card.h-100.shadow
-              .card-body.p-2
-                img.d-block.pb-3.rounded-top(src="/img/placeholder.jpg" style="height: 200px; width: 100%; object-fit: cover")
-                .px-3.pt-2.pb-4
-                  .d-flex.align-items-center
-                    img.py-3.m-2(src="/img/icons/menu-light/icon-menu-04.png" style="width: 30px")
-                    .lead.fw-bold Fashion Shows
-                  .py-2.text-secondary.pb-3 With a wealth of experience, we have flawlessly executed fashion shows for some of the industry's most renowned names. From Concept to reality. Capturing every detail.
-                  a(href="") View Fashion Shows
-          .col-12.col-lg-4
-            .card.h-100.shadow
-              .card-body.p-2
-                img.d-block.pb-3.rounded-top(src="/img/placeholder.jpg" style="height: 200px; width: 100%; object-fit: cover")
-                .px-3.pt-2.pb-4
-                  .d-flex.align-items-center
-                    img.py-3.me-3(src="/img/icons/menu-light/icon-menu-05.png" style="width: 30px")
-                    .lead.fw-bold Theatrical Performances
-                  .py-2.text-secondary.pb-3 We deliver exceptional audiovisual (AV) solutions tailored for the theatre and arts sectors. From immersive sound to breathtaking visuals, our expertise brings every performance to life with precision and artistry.
-                  a(href="") View Theatrical Performances
-          .col-12.col-lg-4
-            .card.h-100.shadow
-              .card-body.p-2
-                img.d-block.pb-3.rounded-top(src="/img/placeholder.jpg" style="height: 200px; width: 100%; object-fit: cover")
-                .px-3.pt-2.pb-4
-                  .d-flex.align-items-center
-                    img.py-3.me-3(src="/img/icons/menu-light/icon-menu-06.png" style="width: 30px")
-                    .lead.fw-bold Immersive Events
-                  .py-2.text-secondary.pb-3 Crafting extraordinary, immersive experiences with cutting-edge audiovisual (AV) technology. Where innovation marries elegance, captivating the aspirational.
-                  a(href="") View Immersive Events
+    //-.container.text-dark(style="max-width: 1200px")
+      .row.gx-3
+        .col-12.col-lg-4
+          .card.h-100.shadow.rounded-0
+            .card-body.p-2
+              img.d-block.pb-3.rounded-0(src="/img/placeholder.jpg" style="height: 200px; width: 100%; object-fit: cover")
+              .px-3.pt-2.pb-4
+                .d-flex.align-items-center
+                  img.py-3.me-2(src="/img/icons/menu-light/icon-menu-01.png" style="height: 50px; width: auto")
+                  .lead.fw-bold Private Events
+                .text-secondary.pb-3 Unforgettable private events with a seamless service adding a personalized touch. Let us bring your vision to life in an elegant style.
+                a(href="") View Private Events
+        .col-12.col-lg-4
+          .card.h-100.shadow.rounded-0
+            .card-body.p-2
+              img.d-block.pb-3.rounded-0(src="/img/placeholder.jpg" style="height: 200px; width: 100%; object-fit: cover")
+              .px-3.pt-2.pb-4
+                .d-flex.align-items-center
+                  img.py-3.me-2(src="/img/icons/menu-light/icon-menu-02.png" style="height: 50px; width: auto")
+                  .lead.fw-bold Product Launches
+                .text-secondary.pb-3 Activate your brand in style with a bespoke product launch, enhanced by state-of-the-art audiovisual (AV) technology. Craft an immersive experience that captivates your audience and leaves an enduring impression of sophistication and innovation.
+                a(href="") View Product Launches
+        .col-12.col-lg-4
+          .card.h-100.shadow.rounded-0
+            .card-body.p-2
+              img.d-block.pb-3.rounded-0(src="/img/placeholder.jpg" style="height: 200px; width: 100%; object-fit: cover")
+              .px-3.pt-2.pb-4
+                .d-flex.align-items-center
+                  img.py-3.me-2(src="/img/icons/menu-light/icon-menu-03.png" style="height: 50px; width: auto")
+                  .lead.fw-bold Conferences
+                .text-secondary.pb-3 Elevating conferences globally with cutting-edge AV technology and masterful production, creating an unforgettable experience of excellence and impact. Every detail is flawlessly executed, ensuring a seamless and visually stunning event.
+                a(href="") View Conferences
+      //-.row.gx-3.py-lg-3
+        .col-12.col-lg-4
+          .card.h-100.shadow
+            .card-body.p-2
+              img.d-block.pb-3.rounded-top(src="/img/placeholder.jpg" style="height: 200px; width: 100%; object-fit: cover")
+              .px-3.pt-2.pb-4
+                .d-flex.align-items-center
+                  img.py-3.m-2(src="/img/icons/menu-light/icon-menu-04.png" style="width: 30px")
+                  .lead.fw-bold Fashion Shows
+                .py-2.text-secondary.pb-3 With a wealth of experience, we have flawlessly executed fashion shows for some of the industry's most renowned names. From Concept to reality. Capturing every detail.
+                a(href="") View Fashion Shows
+        .col-12.col-lg-4
+          .card.h-100.shadow
+            .card-body.p-2
+              img.d-block.pb-3.rounded-top(src="/img/placeholder.jpg" style="height: 200px; width: 100%; object-fit: cover")
+              .px-3.pt-2.pb-4
+                .d-flex.align-items-center
+                  img.py-3.me-3(src="/img/icons/menu-light/icon-menu-05.png" style="width: 30px")
+                  .lead.fw-bold Theatrical Performances
+                .py-2.text-secondary.pb-3 We deliver exceptional audiovisual (AV) solutions tailored for the theatre and arts sectors. From immersive sound to breathtaking visuals, our expertise brings every performance to life with precision and artistry.
+                a(href="") View Theatrical Performances
+        .col-12.col-lg-4
+          .card.h-100.shadow
+            .card-body.p-2
+              img.d-block.pb-3.rounded-top(src="/img/placeholder.jpg" style="height: 200px; width: 100%; object-fit: cover")
+              .px-3.pt-2.pb-4
+                .d-flex.align-items-center
+                  img.py-3.me-3(src="/img/icons/menu-light/icon-menu-06.png" style="width: 30px")
+                  .lead.fw-bold Immersive Events
+                .py-2.text-secondary.pb-3 Crafting extraordinary, immersive experiences with cutting-edge audiovisual (AV) technology. Where innovation marries elegance, captivating the aspirational.
+                a(href="") View Immersive Events
 
-    //- Portfolio ...
-    .container-fluid.bg-black.section.pb-5(id="work")
-      .container.pb-5
-        .row.pb-3
-          .col-12.text-center.mx-auto(style="max-width: 700px")
-            .lead.pb-3.text-secondary(style="font-weight: 300") Our Work
-            h1.text-white(style="font-weight: 300") Bringing vision and sound to life. From large-scale corporate events and live concerts, to immersive virtual experiences.
+  //- Portfolio ...
+  .container-fluid.bg-black.section.pb-5(id="work")
+    .container.pb-5
+      .row.pb-3
+        .col-12.text-center.mx-auto(style="max-width: 700px")
+          .lead.pb-3.text-secondary(style="font-weight: 300") Our Work
+          h1.text-white(style="font-weight: 300") Bringing vision and sound to life. From large-scale corporate events and live concerts, to immersive virtual experiences.
 
-      //- Work examples ...
-      .pt-5
-        .row.pt-5 
-          //- Brand 1 ...
-          .col-12.col-lg-6.position-relative.bg-info(style="min-height: 600px")
-            .position-absolute.h-100.w-100.flex.lead BRAND 1
-          //- Brand 2 ...
-          .col-12.col-lg-6.position-relative.bg-danger(style="min-height: 600px")
-            .position-absolute.h-100.w-100.flex.lead BRAND 2
-        .row
-          //- Brand 3 ...
-          .col-12.position-relative.bg-success(style="min-height: 600px")
-            .position-absolute.h-100.w-100.flex.lead BRAND 3
+    //- Work examples ...
+    .pt-5
+      .row.pt-5 
+        //- Brand 1 ...
+        .col-12.col-lg-6.position-relative.bg-info(style="min-height: 600px")
+          .position-absolute.h-100.w-100.flex.lead BRAND 1
+        //- Brand 2 ...
+        .col-12.col-lg-6.position-relative.bg-danger(style="min-height: 600px")
+          .position-absolute.h-100.w-100.flex.lead BRAND 2
+      .row
+        //- Brand 3 ...
+        .col-12.position-relative.bg-success(style="min-height: 600px")
+          .position-absolute.h-100.w-100.flex.lead BRAND 3
 
-      .container.py-5
-        .row.pt-5
-          .col-12.flex
-            a.d-inline.px-5.py-3.border.text-white(href="#" style="text-decoration: none") VIEW FULL PORTFOLIO
+    .container.py-5
+      .row.pt-5
+        .col-12.flex
+          a.d-inline.px-5.py-3.border.text-white(href="#" style="text-decoration: none") VIEW FULL PORTFOLIO
 
-    //- AV Hire ...
-    .container-fluid.bg-white.section(id="av-hire")
-      .container.flex
-        .row
-          .col-12.text-center(style="max-width: 700px")
-            .lead.pb-3.text-secondary(style="font-weight: 300") Audio Visual (AV) Hire 
-            h1.text-dark(style="font-weight: 300") Enhance your event with cutting-edge audio visual effects hire services. We provide state-of-the-art lighting, sound, and special effects.
-            .pb-5
-      .container.text-dark(style="max-width: 1200px")
-        .row.gx-3
-          .col-12.col-lg-4
-            .card.h-100.shadow.rounded-0
-              .card-body.p-2
-                img.d-block.pb-3.rounded-0(src="/img/placeholder.jpg" style="height: 200px; width: 100%; object-fit: cover")
-                .px-3.pt-2.pb-4
-                  .d-flex.align-items-center
-                    img.py-3.me-2(src="/img/icons/menu-light/icon-menu-01.png" style="height: 50px; width: auto")
-                    .lead.fw-bold AV Effects Hire
-                  .text-secondary.pb-3 Elevate Your Event with Stunning Sound &amp; Visuals. Professional lighting, sound systems, LED screens, special effects &amp; more for unforgettable experiences. Book now.
-                  a(href="/beta/av-effects-hire/") View AV Effects Hire
-          .col-12.col-lg-4
-            .card.h-100.shadow.rounded-0
-              .card-body.p-2
-                img.d-block.pb-3.rounded-0(src="/img/placeholder.jpg" style="height: 200px; width: 100%; object-fit: cover")
-                .px-3.pt-2.pb-4
-                  .d-flex.align-items-center
-                    img.py-3.me-2(src="/img/icons/menu-light/icon-menu-02.png" style="height: 50px; width: auto")
-                    .lead.fw-bold AV Lighting Hire
-                  .text-secondary.pb-3 Elevate Your Event with Stunning Sound &amp; Visuals. Professional lighting, sound systems, LED screens, special effects &amp; more for unforgettable experiences. Book now.
-                  a(href="/beta/av-lighting-hire/") View AV Lighting Hire
-          .col-12.col-lg-4
-            .card.h-100.shadow.rounded-0
-              .card-body.p-2
-                img.d-block.pb-3.rounded-0(src="/img/placeholder.jpg" style="height: 200px; width: 100%; object-fit: cover")
-                .px-3.pt-2.pb-4
-                  .d-flex.align-items-center
-                    img.py-3.me-2(src="/img/icons/menu-light/icon-menu-03.png" style="height: 50px; width: auto")
-                    .lead.fw-bold AV Sound Hire
-                  .text-secondary.pb-3 Elevate Your Event with Stunning Sound &amp; Visuals. Professional lighting, sound systems, LED screens, special effects &amp; more for unforgettable experiences. Book now.
-                  a(href="/beta/av-sound-hire/") View AV Sound Hire
+  //- AV Hire ...
+  .container-fluid.bg-white.section(id="av-hire")
+    .container.flex
+      .row
+        .col-12.text-center(style="max-width: 700px")
+          .lead.pb-3.text-secondary(style="font-weight: 300") Audio Visual (AV) Hire 
+          h1.text-dark(style="font-weight: 300") Enhance your event with cutting-edge audio visual effects hire services. We provide state-of-the-art lighting, sound, and special effects.
+          .pb-5
+    .container.text-dark(style="max-width: 1200px")
+      .row.gx-3
+        .col-12.col-lg-4
+          .card.h-100.shadow.rounded-0
+            .card-body.p-2
+              img.d-block.pb-3.rounded-0(src="/img/placeholder.jpg" style="height: 200px; width: 100%; object-fit: cover")
+              .px-3.pt-2.pb-4
+                .d-flex.align-items-center
+                  img.py-3.me-2(src="/img/icons/menu-light/icon-menu-01.png" style="height: 50px; width: auto")
+                  .lead.fw-bold AV Effects Hire
+                .text-secondary.pb-3 Elevate Your Event with Stunning Sound &amp; Visuals. Professional lighting, sound systems, LED screens, special effects &amp; more for unforgettable experiences. Book now.
+                a(href="/beta/av-effects-hire/") View AV Effects Hire
+        .col-12.col-lg-4
+          .card.h-100.shadow.rounded-0
+            .card-body.p-2
+              img.d-block.pb-3.rounded-0(src="/img/placeholder.jpg" style="height: 200px; width: 100%; object-fit: cover")
+              .px-3.pt-2.pb-4
+                .d-flex.align-items-center
+                  img.py-3.me-2(src="/img/icons/menu-light/icon-menu-02.png" style="height: 50px; width: auto")
+                  .lead.fw-bold AV Lighting Hire
+                .text-secondary.pb-3 Elevate Your Event with Stunning Sound &amp; Visuals. Professional lighting, sound systems, LED screens, special effects &amp; more for unforgettable experiences. Book now.
+                a(href="/beta/av-lighting-hire/") View AV Lighting Hire
+        .col-12.col-lg-4
+          .card.h-100.shadow.rounded-0
+            .card-body.p-2
+              img.d-block.pb-3.rounded-0(src="/img/placeholder.jpg" style="height: 200px; width: 100%; object-fit: cover")
+              .px-3.pt-2.pb-4
+                .d-flex.align-items-center
+                  img.py-3.me-2(src="/img/icons/menu-light/icon-menu-03.png" style="height: 50px; width: auto")
+                  .lead.fw-bold AV Sound Hire
+                .text-secondary.pb-3 Elevate Your Event with Stunning Sound &amp; Visuals. Professional lighting, sound systems, LED screens, special effects &amp; more for unforgettable experiences. Book now.
+                a(href="/beta/av-sound-hire/") View AV Sound Hire
 
-    //- Partners ...
-    .container-fluid.bg-white.section(id="brands")
-      .container
-        .row.pb-3
-          .col-12.text-center.mx-auto(style="max-width: 700px")
-            .lead.pb-3.text-secondary(style="font-weight: 300") Our Expertise 
-            h1.text-dark(style="font-weight: 300") We work with some of the biggest names to bring their creative visions to life.
-        .row.pt-5
-          .col-6.col-lg-3.flex.pb-5
-            img(src="/img/brands/adidas-logo.png" style="opacity: 0.4")
-          .col-6.col-lg-3.flex.pb-5
-            img(src="/img/brands/verizon-logo.png" style="max-width: 35%; opacity: 0.4")
-          .col-6.col-lg-3.flex.pb-5
-            img(src="/img/brands/nike-logo.png" style="max-width: 35%; opacity: 0.4")
-          .col-6.col-lg-3.flex.pb-5
-            img(src="/img/brands/youtube-logo.png" style="max-width: 35%; opacity: 0.4")
-        .row.text-secondary.pt-3
-          .col-6.col-lg-3.flex.pb-5
-            img(src="/img/brands/cointreau-logo.png" style="max-width: 35%; opacity: 0.4")
-          .col-6.col-lg-3.flex.pb-5
-            img(src="/img/brands/pepe-jeans-logo.png" style="max-width: 35%; opacity: 0.4")
-          .col-6.col-lg-3.flex.pb-5
-            img(src="/img/brands/selfridges-logo.png" style="max-width: 35%; opacity: 0.4")
-          .col-6.col-lg-3.flex.pb-5
-            img(src="/img/brands/jinro-logo.png" style="max-width: 35%; opacity: 0.4")
+  //- Partners ...
+  .container-fluid.bg-white.section(id="brands")
+    .container
+      .row.pb-3
+        .col-12.text-center.mx-auto(style="max-width: 700px")
+          .lead.pb-3.text-secondary(style="font-weight: 300") Our Expertise 
+          h1.text-dark(style="font-weight: 300") We work with some of the biggest names to bring their creative visions to life.
+      .row.pt-5
+        .col-6.col-lg-3.flex.pb-5
+          img(src="/img/brands/adidas-logo.png" style="opacity: 0.4")
+        .col-6.col-lg-3.flex.pb-5
+          img(src="/img/brands/verizon-logo.png" style="max-width: 35%; opacity: 0.4")
+        .col-6.col-lg-3.flex.pb-5
+          img(src="/img/brands/nike-logo.png" style="max-width: 35%; opacity: 0.4")
+        .col-6.col-lg-3.flex.pb-5
+          img(src="/img/brands/youtube-logo.png" style="max-width: 35%; opacity: 0.4")
+      .row.text-secondary.pt-3
+        .col-6.col-lg-3.flex.pb-5
+          img(src="/img/brands/cointreau-logo.png" style="max-width: 35%; opacity: 0.4")
+        .col-6.col-lg-3.flex.pb-5
+          img(src="/img/brands/pepe-jeans-logo.png" style="max-width: 35%; opacity: 0.4")
+        .col-6.col-lg-3.flex.pb-5
+          img(src="/img/brands/selfridges-logo.png" style="max-width: 35%; opacity: 0.4")
+        .col-6.col-lg-3.flex.pb-5
+          img(src="/img/brands/jinro-logo.png" style="max-width: 35%; opacity: 0.4")
 
-    //- Sustainability ...
-    .container-fluid.section(id="sustainability" style="background: #87973c url(/img/sustainability.jpg); background-size: cover; background-position: 50% 50%")
-      .container
-        .row
-          .col-12.text-center.mx-auto(style="max-width: 700px")
-            .lead.pb-3.text-white(style="font-weight: 300; opacity: 0.7") Sustainability
-            h1.text-white(style="font-weight: 300") Innovating with the planet in mind. We're committed to delivering exceptional audio visual solutions while minimizing our environmental impact.
+  //- Sustainability ...
+  .container-fluid.section(id="sustainability" style="background: #87973c url(/img/sustainability.jpg); background-size: cover; background-position: 50% 50%")
+    .container
+      .row
+        .col-12.text-center.mx-auto(style="max-width: 700px")
+          .lead.pb-3.text-white(style="font-weight: 300; opacity: 0.7") Sustainability
+          h1.text-white(style="font-weight: 300") Innovating with the planet in mind. We're committed to delivering exceptional audio visual solutions while minimizing our environmental impact.
