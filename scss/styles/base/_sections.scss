@@ -1,0 +1,42 @@
+// scss/styles/base/_sections.scss
+
+section {
+  margin: 0 auto;
+  padding: 75px 0;
+
+  h2 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+  }
+
+  @media (max-width: 650px) {
+    padding: 50px 0;
+  }
+}
+
+section[data-theme="dark"] {
+  color: #9c9c9c !important;
+  background-color: #000000;
+
+  .card, .card-body {
+    color: #9c9c9c !important;
+    background-color: #000000;
+    border-color: #3c3c3c;
+  }
+}
+
+section[data-theme="light"] {
+  color: #1a1a1a;
+  background-color: #ffffff;
+
+  .card, .card-body {
+    background-color: #ffffff;
+  }
+}
