@@ -7,7 +7,7 @@
   "author": "Bryan Lown",
   "scripts": {
     "server": "ts-node src/server.ts",
-    "sass:watch": "sass --watch \"scss/styles-legacy.scss:public/css/styles-legacy.min.css\" \"scss/styles.scss:public/css/styles.min.css\" --style=compressed",
+    "sass:watch": "sass --watch \"scss/styles-legacy.scss:public/css/styles-legacy.min.css\" \"scss/styles.scss:public/css/styles.min.css\" \"scss/vadb.scss:public/css/vadb.min.css\" --style=compressed",
     "vite:build": "vite build",
     "esbuild:dev": "esbuild src/main.ts --bundle --outdir=public/js --watch --log-level=debug",
     "nodemon": "nodemon --watch src --ext ts --delay 250ms --exec \"ts-node src/server.ts\"",
@@ -40,6 +40,7 @@
     "mongoose": "^8.19.3",
     "nodemailer": "^7.0.10",
     "pino": "^10.1.0",
+    "popmotion": "^11.0.5",
     "pug": "^3.0.3",
     "sass": "^1.94.0",
     "ssh2-sftp-client": "^12.0.1",
