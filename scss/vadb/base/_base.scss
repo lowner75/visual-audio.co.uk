@@ -1,0 +1,82 @@
+// scss/styles/base/_base.scss
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 11pt;
+  position: relative;
+	line-height: 1.6; // 1,75;
+  background: var(--bg);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+	text-rendering: auto;
+}
+
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  background: #212529; // #000;
+}
+
+body[data-scroll="smooth"] {
+  #main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    will-change: transform;
+  }
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--text-link);
+
+  &:hover {
+    color: var(--text-link-hover);
+  }
+}
+
+/**
+* src/style.scss ...
+*/
+
+// Light theme ...
+html {
+
+  --va-color: #74c128;
+  --background-color: #Fff;
+  --border-color: #ddd;
+
+  nav {
+    position: relative;
+    z-index: 2500;
+    opacity: 0;
+    visibility: hidden;
+    .nav-container a {
+      background-color: transparent;
+      color: var(--bs-secondary-rgb);
+      font-size: 15px;
+      font-weight: 400;
+      text-decoration: none;
+    }
+  }
+}
