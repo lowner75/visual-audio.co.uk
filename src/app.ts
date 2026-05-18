@@ -21,8 +21,11 @@ import { helmetMiddleware } from "./middleware/helmet";
 // Routes
 import { landingRoutes } from "./modules/legacy/landing.routes";
 import { messageRoutes } from "./modules/messages/message.routes";
+import { avHireRoutes } from "./modules/av-hire/av-hire.routes";
+
+// Modules
 import { betaModule } from "./modules/beta/index";
-import { vadbRoutes } from "./modules/vadb/vadb.routes";
+import { vadbModule } from "./modules/vadb";
 
 const envFile =
   process.env.NODE_ENV === "production"
@@ -74,7 +77,8 @@ export async function buildApp() {
   await app.register(landingRoutes);
   await app.register(messageRoutes);
   await app.register(betaModule);
-  await app.register(vadbRoutes);
+  await app.register(avHireRoutes);
+  await app.register(vadbModule);
  
   return app;
 
