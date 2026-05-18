@@ -1,0 +1,164 @@
+//- views/include/nav-av-hire.pug
+
+.sub-menu-av-hire.sub-menu(data-trigger="av-hire")
+  #accordion.row.px-3.px-xl-4.py-4.gx-3.accordion.accordion-flush
+
+    .col-12.d-block.d-xl-none.pb-3.my-3
+      .d-flex.flex-row.align-items-center.justify-content-start.nav-logo
+        a(href="/beta" style="text-decoration: none")
+          img.me-2(src="/images/logo.png" style="width: 36px")
+        a.d-block.me-2.me-lg-5.pe-2.sub-menu-logo(href="/beta" style="text-decoration: none; font-size: 20px; font-weight: 500") Visual<span style="font-weight: 300">Audio</span>
+
+    .col-12.col-xl-4.sub-menu-column.av-hire-sub-menu-column.accordion-item.border-0
+      ul.accordion-header(id="ah-events")
+        .py-2.mb-3.fw-bold.sub-menu-column-title.accordion-button.px-0.collapsed(id="collapse-events" type="button" data-bs-toggle="collapse" data-bs-target="#events-sub-menu" aria-expanded="false" aria-controls="events-sub-menu")
+          img(src=`/images/icons/icon-av-3.png` style="height: 12px; margin-top: -4px; margin-right: 10px;")
+          span LIGHTING HIRE
+        #events-sub-menu.sub-menu-collapse.accordion-collapse.collapse(aria-labelledby="ah-events" data-bs-parent="#accordion")
+
+          li.pe-5.pb-3
+            a.d-block.text-dark.sub-menu-link.border-0(href="#")
+              .sub-menu-row.fw-bold.pb-1.flex.justify-content-start
+                svg.icon.me-2(viewBox="0 0 24 24" style="width: 10px; height: 10px; fill: var(--text); transform: rotate(-90deg); margin-top: -3px;")
+                  use(xlink:href="/images/icons/icon-menu-down.svg")
+                span.sub-menu-title Private Events
+              span.sub-menu-text Unforgettable private events with a seamless service. Bring your vision to life in elegant style.
+        
+          li.pe-5.pb-3
+            a.d-block.text-dark.sub-menu-link.border-0(href="#")
+              .sub-menu-row.fw-bold.pb-1.flex.justify-content-start
+                svg.icon.me-2(viewBox="0 0 24 24" style="width: 10px; height: 10px; fill: var(--text); transform: rotate(-90deg); margin-top: -3px;")
+                  use(xlink:href="/images/icons/icon-menu-down.svg")
+                span.sub-menu-title Product Launches
+              span.sub-menu-text Activate your brand in style with a bespoke product launch, enhanced by state-of-the-art audiovisual (AV) technology.
+        
+          li.pe-5.pb-3.text-dark
+            a.d-block.text-dark.sub-menu-link.border-0(href="#")
+              .sub-menu-row.fw-bold.pb-1.flex.justify-content-start
+                svg.icon.me-2(viewBox="0 0 24 24" style="width: 10px; height: 10px; fill: var(--text); transform: rotate(-90deg); margin-top: -3px;")
+                  use(xlink:href="/images/icons/icon-menu-down.svg")
+                span.sub-menu-title Conferences
+              span.sub-menu-text Elevating conferences globally with cutting-edge AV technology and masterful production.
+        
+          li.pe-5.pb-3.text-dark
+            a.d-block.text-dark.sub-menu-link.border-0(href="#")
+              .sub-menu-row.fw-bold.pb-1.flex.justify-content-start
+                svg.icon.me-2(viewBox="0 0 24 24" style="width: 10px; height: 10px; fill: var(--text); transform: rotate(-90deg); margin-top: -3px;")
+                  use(xlink:href="/images/icons/icon-menu-down.svg")
+                span.sub-menu-title Fashion Shows
+              span.sub-menu-text With a wealth of experience, we flawlessly execute fashion shows for some of the industry's most renowned names.
+        
+          li.pe-5.pb-3.text-dark
+            a.d-block.text-dark.sub-menu-link.border-0(href="#")
+              .sub-menu-row.fw-bold.pb-1.flex.justify-content-start
+                svg.icon.me-2(viewBox="0 0 24 24" style="width: 10px; height: 10px; fill: var(--text); transform: rotate(-90deg); margin-top: -3px;")
+                  use(xlink:href="/images/icons/icon-menu-down.svg")
+                span.sub-menu-title Theatrical Performances
+              span.sub-menu-text We deliver exceptional audiovisual (AV) solutions tailored for the theatre and arts sectors.
+
+          li.pe-5.pb-3.text-dark
+            a.d-block.text-dark.sub-menu-link.border-0(href="#")
+              .sub-menu-row.fw-bold.pb-1.flex.justify-content-start
+                svg.icon.me-2(viewBox="0 0 24 24" style="width: 10px; height: 10px; fill: var(--text); transform: rotate(-90deg); margin-top: -3px;")
+                  use(xlink:href="/images/icons/icon-menu-down.svg")
+                span.sub-menu-title Immersive Concepts
+              span.sub-menu-text Crafting extraordinary, immersive experiences with cutting-edge audiovisual (AV) technology.
+
+    .col-12.col-xl-4.sub-menu-column.av-hire-sub-menu-column.accordion-item.border-0
+      ul.accordion-header(id="ah-services")
+        .py-2.mb-3.fw-bold.sub-menu-column-title.accordion-button.px-0.collapsed(id="collapse-services" type="button" data-bs-toggle="collapse" data-bs-target="#services-sub-menu" aria-expanded="false" aria-controls="service-sub-menu")
+          img(src=`/images/icons/icon-dj.png` style="height: 12px; margin-top: -2px; margin-right: 10px;")
+          span SOUND HIRE
+        #services-sub-menu.sub-menu-collapse.accordion-collapse.collapse(aria-labelledby="ah-services" data-bs-parent="#accordion" aria-expanded="true" )
+
+          li.pe-5.pb-3.text-dark
+            a.d-block.text-dark.sub-menu-link(href="#")
+              .sub-menu-row.fw-bold.pb-1.flex-center.justify-content-start
+                svg.icon.me-2(viewBox="0 0 24 24" style="width: 10px; height: 10px; fill: var(--text); transform: rotate(-90deg);")
+                  use(xlink:href="/images/icons/icon-menu-down.svg")
+                span.sub-menu-title Audio Visual Consultations
+              span.sub-menu-text
+                We offer a comprehensive range of consultation services, specializing in lighting, sound, and audiovisual (AV) solutions
+
+          li.pe-5.pb-3.text-dark
+            a.d-block.text-dark.sub-menu-link.border-0(href="#")
+              .sub-menu-row.fw-bold.pb-1.flex.justify-content-start
+                svg.icon.me-2(viewBox="0 0 24 24" style="width: 10px; height: 10px; fill: var(--text); transform: rotate(-90deg); margin-top: -3px;")
+                  use(xlink:href="/images/icons/icon-menu-down.svg")
+                span.sub-menu-title Video &amp; Live Streaming
+              span.sub-menu-text Digital streaming options to share your live event with customers anywhere in the country, or even the world.
+
+          li.pe-5.pb-3.text-dark
+            a.d-block.text-dark.sub-menu-link.border-0(href="#")
+              .sub-menu-row.fw-bold.pb-1.flex.justify-content-start
+                svg.icon.me-2(viewBox="0 0 24 24" style="width: 10px; height: 10px; fill: var(--text); transform: rotate(-90deg); margin-top: -3px;")
+                  use(xlink:href="/images/icons/icon-menu-down.svg")
+                span.sub-menu-title Venue Solutions
+              span.sub-menu-text We collaborate with some of the most prestigious venues spanning from London to New York. We source exceptional venues to meet every need.
+
+    .col-12.col-xl-4.sub-menu-column.av-hire-sub-menu-column.accordion-item.border-0
+      ul.accordion-header(id="ah-bespoke")
+        .py-2.mb-3.fw-bold.sub-menu-column-title.accordion-button.px-0.collapsed(id="collapse-bespoke" type="button" data-bs-toggle="collapse" data-bs-target="#bespoke-sub-menu" aria-expanded="false" aria-controls="bespoke-sub-menu")
+          img(src=`/images/icons/icon-av-1.png` style="height: 12px; margin-top: -3px; margin-right: 10px;")
+          span AUDIO VISUAL HIRE
+        #bespoke-sub-menu.sub-menu-collapse.accordion-collapse.collapse(aria-labelledby="ah-bespoke" data-bs-parent="#accordion")
+
+          li.pe-5.pb-3
+            a.d-block.text-dark.sub-menu-link.border-0(href="#")
+              .sub-menu-row.fw-bold.pb-1.flex.justify-content-start
+                svg.icon.me-2(viewBox="0 0 24 24" style="width: 10px; height: 10px; fill: var(--text); transform: rotate(-90deg); margin-top: -3px;")
+                  use(xlink:href="/images/icons/icon-menu-down.svg")
+                span.sub-menu-title Full Production Services
+              span.sub-menu-text Your ultimate destination for all production needs, offering a one-stop shop tailored to your desires. Through Lighting, Sound, Set Design, Event Styling, and Architecture, we deliver everything required to bring your event to life.
+
+          li.pe-5.pb-3
+            a.d-block.text-dark.sub-menu-link.border-0(href="#")
+              .sub-menu-row.fw-bold.pb-1.flex.justify-content-start
+                svg.icon.me-2(viewBox="0 0 24 24" style="width: 10px; height: 10px; fill: var(--text); transform: rotate(-90deg); margin-top: -3px;")
+                  use(xlink:href="/images/icons/icon-menu-down.svg")
+                span.sub-menu-title Set Design &amp; Build
+              span.sub-menu-text We provide bespoke stage and set design builds across London and its surrounding counties, manufactured to meet your unique vision.
+
+    .col-12.d-block.d-xl-none.border-0
+      .pt-2.pb-1.mb-3.px-0
+        a.d-block.sub-menu-link.fw-bold.pb-2(href="#") AV HIRE
+    .col-12.d-block.d-xl-none.border-0
+      .pt-2.pb-1.mb-3.px-0
+        a.d-block.sub-menu-link.fw-bold.pb-2(href="#") WORK
+    .col-12.d-block.d-xl-none.border-0
+      .pt-2.pb-1.mb-2.px-0
+        a.d-block.sub-menu-link.fw-bold.pb-2(href="#") CONTACT
+    .col-12.d-block.d-xl-none.sub-menu-column.av-hire-sub-menu-column.accordion-item.border-0
+      .pt-2.pb-1.mb-3.px-0
+        ul.accordion-header(id="ah-account")
+          .py-2.mb-3.fw-bold.sub-menu-column-title.accordion-button.px-0.collapsed(id="collapse-bespoke" type="button" data-bs-toggle="collapse" data-bs-target="#account-sub-menu" aria-expanded="false" aria-controls="account-sub-menu") ACCOUNT
+          #account-sub-menu.sub-menu-collapse.accordion-collapse.collapse(aria-labelledby="ah-account" data-bs-parent="#accordion")
+
+            if user
+              if user.isAdmin === 1
+
+                li.pe-5.pb-3
+                  a.d-block.text-dark.sub-menu-link.border-0(href="/beta/VADB/")
+                    .sub-menu-row.fw-bold.pb-2.flex.justify-content-start
+                      span.sub-menu-title VADB
+                    span.sub-menu-text Go to the Visual Audio Database.
+
+              li.pe-5.pb-3
+                .d-block.text-dark.sub-menu-link.border-0
+                  .sub-menu-row.fw-bold.pb-2.flex.justify-content-start
+                    span.sub-menu-title Site Theme
+                  span.sub-menu-text Customize the site's theme with light and dark modes.
+                .pe-5.pb-1
+                  .d-block.pt-3
+                    .pb-3.flex.flex-row.justify-content-start.theme-link.theme-light(onclick='changeTheme("light")')
+                      .fa-regular.fa-sun(style="margin-right: 12px")
+                      .me-3 Light Theme
+                    .pb-0.flex.flex-row.justify-content-start.theme-link.theme-dark(onclick='changeTheme("dark")')
+                      .fa-regular.fa-moon(style="margin-left: 2px; margin-right: 13px")
+                      .me-3 Dark Theme (Default)
+
+              li.pe-5.pb-3
+                a.d-block.text-dark.sub-menu-link.border-0(href="/logout/")
+                  .sub-menu-row.fw-bold.pb-2.flex.justify-content-start
+                    span.sub-menu-title Logout
+                  span.sub-menu-text Log out of your account.
