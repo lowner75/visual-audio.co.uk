@@ -1,0 +1,118 @@
+extends layouts/main
+
+block content
+
+  //- Database dashboard ...
+  body
+    .vadb-content.pt-2
+      h4 Hi #{user.firstName}, welcome to the Visual<span style="font-weight: 300">Audio</span> Database.
+
+      //- Top summary ...
+      .row.pt-2.pb-sm-3.gx-3(style="font-size: 12px")
+
+        //- Products summary ...
+        .col-12.col-sm-6.col-lg-3
+          .rounded.p-3(style="border: solid 1px rgba(255,255,255,0.2)") AV PRODUCTS
+            .float-end
+              .rounded-circle.d-flex.align-items-center.justify-content-center.bg-danger(style="height: 30px; width: 30px; background: var(--va-color)")
+                i.fas.fa-cubes.fw-bold
+            .d-flex.align-items-center.justify-content-center.h-100.pt-2
+              h3 #{productsTotal}
+
+        //- User summary ...
+        .col-12.col-sm-6.col-lg-3.mt-3.mt-sm-0
+          .rounded.p-3(style="border: solid 1px rgba(255,255,255,0.2)") ACTIVE USERS
+            .float-end
+              .rounded-circle.d-flex.align-items-center.justify-content-center.bg-danger(style="height: 30px; width: 30px; background: var(--va-color)")
+                i.fas.fa-users.fw-bold
+            .d-flex.align-items-center.justify-content-center.h-100.pt-2
+              h3 #{users.length}
+
+        //- Quotes summary ...
+        .col-12.col-sm-6.col-lg-3.mt-3.mt-lg-0
+          .rounded.p-3(style="border: solid 1px rgba(255,255,255,0.2)") CURRENT QUOTES
+            .float-end
+              .rounded-circle.d-flex.align-items-center.justify-content-center.bg-danger(style="height: 30px; width: 30px; background: var(--va-color)")
+                i.fas.fa-sterling-sign.fw-bold
+            .d-flex.align-items-center.justify-content-center.h-100.pt-2
+              h3 0
+            .float-end(style="margin-top: -18px")
+              .badge.bg-primary(style="line-height: 1; text-shadow: 0px 0px 2px #000") COMING SOON
+
+        //- Sales summary ...
+        .col-12.col-sm-6.col-lg-3.mt-3.mt-lg-0
+          .rounded.p-3(style="border: solid 1px rgba(255,255,255,0.2)") MONTHLY SALES
+            .float-end
+              .rounded-circle.d-flex.align-items-center.justify-content-center.bg-danger(style="height: 30px; width: 30px; background: var(--va-color)")
+                i.fas.fa-sterling-sign.fw-bold
+            .d-flex.align-items-center.justify-content-center.h-100.pt-2
+              h3 £0.00
+            .float-end(style="margin-top: -18px")
+              .badge.bg-primary(style="line-height: 1; text-shadow: 0px 0px 2px #000") COMING SOON
+
+      //- Products and User tables ...
+      .row.pb-3.gx-3.mt-4.mt-sm-2.mt-lg-2(style="font-size: 12px")
+
+        //- Products table ...
+        .vadb-table.col-12.col-lg-6
+          .rounded(style="background: #2a2f34; old-border: solid 1px rgba(255,255,255,0.2)")
+            .px-3.px-sm-4.py-3.mb-2.fw-bold(style="border-bottom: solid 1px rgba(255,255,255,0.1)") AV PRODUCTS (#{products.length} OF #{productsTotal})
+            each product in products
+              a(href=`/beta/VADB/products/view/${product.name.replace(/ /g, "_")}`)
+                .vadb-table-row.px-3.px-sm-4.py-2(style="no-background: rgba(255,255,255,0.1)")
+                  .float-end(style="margin-top: 10px")
+                    .d-flex.align-items-center
+                      .vadb-table-badge.d-none.d-sm-inline-block View
+                      i.fas.fa-chevron-right.ms-2(style="font-size: 8pt")
+                  .d-flex.align-items-center
+                    .d-none.d-sm-block.rounded.me-3(style="height: 40px; width: 40px; background: rgba(255,255,255,0.4)")
+                      if product.category === "Effects"
+                        .d-flex.align-items-center.justify-content-center.h-100.fw-bold(style="font-size: 11pt; text-shadow: 0px 0px 2px rgba(0,0,0,0.25)") EF
+                      if product.category === "Lighting"
+                        .d-flex.align-items-center.justify-content-center.h-100.fw-bold(style="font-size: 11pt; text-shadow: 0px 0px 2px rgba(0,0,0,0.25)") LT
+                      if product.category === "Sound"
+                        .d-flex.align-items-center.justify-content-center.h-100.fw-bold(style="font-size: 11pt; text-shadow: 0px 0px 2px rgba(0,0,0,0.25)") SD
+                    .d-block(style="line-height: 1.2")
+                      .lead
+                        span #{product.name} 
+                        span.d-none.d-sm-inline-block(style="color: rgba(255,255,255,0.6)") [ #{product.supplier} ]
+                      .pt-1(style="color: rgba(255,255,255,0.3)") Category: #{product.category}
+            .vadb-table-row-link.p-3.mt-2.text-center(style="border-top: solid 1px rgba(255,255,255,0.1)")
+              a.d-block(href="/beta/VADB/products")
+                span View All
+                span
+                  i.fas.fa-chevron-right.ms-2(style="font-size: 8pt")
+
+        //- User table ...
+        .vadb-table.col-12.col-lg-6.mt-4.mt-lg-0
+          .rounded(style="background: #2a2f34; old-border: solid 1px rgba(255,255,255,0.2)")
+            .px-3.px-sm-4.py-3.mb-2.fw-bold(style="border-bottom: solid 1px rgba(255,255,255,0.1)") ACTIVE USERS (#{users.length} OF #{usersTotal})
+            each user in users
+              - const initials = user.firstName.charAt(0) + user.lastName.charAt(0)
+              a(href=`/beta/VADB/users/view/${user.id}`)
+                .vadb-table-row.px-3.px-sm-4.py-2
+                  .float-end(style="margin-top: 10px")
+                    .d-flex.align-items-center
+                      .vadb-table-badge View
+                      i.fas.fa-chevron-right.ms-2(style="font-size: 8pt")
+                  .d-flex.align-items-center
+                    .rounded-circle.me-3.bg-primary(style="height: 40px; width: 40px")
+                      .d-flex.align-items-center.justify-content-center.h-100.fw-bold.position-relative(style="font-size: 11pt; text-shadow: 0px 0px 2px rgba(0,0,0,0.25)") #{initials}
+                        if user.isAdmin === 1
+                          .position-absolute(style="top: -5px; right: -5px")
+                            .rounded-circle.bg-light.d-flex.align-items-center.justify-content-center.shadow(style="height: 17px; width: 17px")
+                              i.fas.fa-gear.text-dark(style="font-size: 12px")
+                    .d-block(style="line-height: 1.2")
+                      .lead #{user.firstName} #{user.lastName} 
+                        if user.company !== null && user.company !== "" && user.company !== undefined 
+                          span.d-none.d-md-inline-block [ #{user.company} ]
+                      .pt-1.text-secondary Role: 
+                        if user.isAdmin === 1
+                          span Administrator
+                        else 
+                          span User
+            .vadb-table-row-link.p-3.mt-2.text-center(style="border-top: solid 1px rgba(255,255,255,0.1)")
+              a.d-block(href="/beta/VADB/users")
+                span View All
+                span
+                  i.fas.fa-chevron-right.ms-2(style="font-size: 8pt")
