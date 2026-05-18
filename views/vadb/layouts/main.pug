@@ -1,0 +1,26 @@
+//- views/vadb/layouts/main.pug
+
+block variables
+
+doctype html
+html(lang='en')
+
+  //- Head
+  include ../include/head.pug 
+
+  body
+
+    //- Navigation
+    include ../include/nav-top.pug
+    include ../include/nav-side.pug
+
+    //- Main content
+    main(id="main" role="main")
+
+      //- Content
+      block content
+
+      //- Page-specific JS
+      include ../include/scripts.pug
+
+block modals
