@@ -41,6 +41,7 @@ export const authController = {
     return reply.code(200).send({
       success: true,
       isAdmin: result.isAdmin,
+      redirectTo: "/beta",
     });
 
   },
