@@ -9,6 +9,7 @@
 @use 'styles/base/fonts';
 @use 'styles/base/forms';
 @use 'styles/base/reset';
+@use 'styles/base/sections';
 @use 'styles/base/typography';
 
 // Components
@@ -20,7 +21,8 @@
 
 // Layouts
 @use 'styles/layouts/footer';
-@use 'styles/layouts/nav';
+@use 'styles/layouts/nav-top';
+@use 'styles/layouts/nav-dropdown';
 @use 'styles/layouts/preloader';
 
 // Page styles
