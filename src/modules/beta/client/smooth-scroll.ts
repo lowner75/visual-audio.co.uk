@@ -3,24 +3,24 @@
 export default function initSmoothScroll() {
   const isHoverCapable = window.matchMedia("(hover: hover)").matches;
   const isMobile = window.innerWidth < 900;
-  if (!isHoverCapable || isMobile) return;
+
+  if (!isHoverCapable || isMobile) {
+    document.body.style.height = "";
+    return;
+  }
 
   const wrapper = document.querySelector<HTMLElement>("#main");
-
   if (!wrapper) return;
 
   const body = document.body;
 
+  gsap.set(wrapper, { willChange: "transform" });
+
   const setBodyHeight = () => {
-    const height = wrapper.getBoundingClientRect().height;
-    body.style.height = `${height}px`;
+    body.style.height = `${wrapper.scrollHeight}px`;
   };
 
   let scrollPos = 0;
-  let smoothPos = 0;
-
-  const ease = 0.03;
-  const endEase = 0.12;
 
   const update = () => {
     scrollPos = window.scrollY || window.pageYOffset;
@@ -29,7 +29,7 @@ export default function initSmoothScroll() {
       y: -scrollPos,
       ease: "power3.out",
       duration: 0.8,
-      overwrite: true
+      overwrite: true,
     });
 
     requestAnimationFrame(update);
@@ -37,22 +37,18 @@ export default function initSmoothScroll() {
 
   // Intercept PageDown / PageUp
   window.addEventListener("keydown", (e) => {
-    const key = e.key;
+    if (e.key !== "PageDown" && e.key !== "PageUp") return;
+    if (e.repeat) return; // Ignore held key repeats
 
-    if (key === "PageDown" || key === "PageUp") {
-      e.preventDefault();
+    e.preventDefault();
 
-      const current = window.scrollY || window.pageYOffset;
-      const pageHeight = window.innerHeight;
-      const direction = key === "PageDown" ? 1 : -1;
+    const current = window.scrollY || window.pageYOffset;
+    const direction = e.key === "PageDown" ? 1 : -1;
 
-      const target = current + pageHeight * (direction * 0.5);
-
-      window.scrollTo({
-        top: target,
-        behavior: "auto",
-      });
-    }
+    window.scrollTo({
+      top: current + window.innerHeight * direction,
+      behavior: "auto",
+    });
   });
 
   setBodyHeight();
