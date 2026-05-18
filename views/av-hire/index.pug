@@ -1,0 +1,84 @@
+//- views/av-hire/index.pug
+
+extends ../layouts/main
+
+block variables
+  - const bodyClass = 'av-hire-page'
+  - const bodyPage = 'av-hire'
+
+block content
+
+  //- AV Hire Landing Page
+  section.hero.flex-center.justify-content-start(style="min-height: 100vh;" data-theme="dark")
+    .container
+      .d-block
+        h1.mb-2(style="font-size: 10rem;font-weight: 300; letter-spacing: -0.05em;") Audio Visual Hire
+        .lead(style="font-size: 1.75rem; font-weight: 300; color: var(--text-muted);") Lighting, sound and effects hire for events, exhibitions and productions.
+
+  //- AV Hire Search by Category
+  section.text-dark.py-5(data-theme="light")
+    .container.my-5.py-5
+
+      //- Section heading
+      header.text-center.mb-5
+        h2.mb-3.text-dark Browse by Category
+        p.text-muted.small Choose from lighting, sound and effects hire for events of all sizes.
+            
+        .row.pt-5.g-4
+
+          //- Categories
+          each category in categories
+            article.col-12.col-md-6.col-xl-4
+              .card.w-100.py-5(style="min-height: 200px;")
+                .card-body.flex-center
+                  .d-block.px-3.text-center
+                    div.flex-center(style="min-height: 110px;")
+                      h3.text-dark.text-uppercase(style="font-size: 1.6rem; font-weight: 400; letter-spacing: -0.02em;") #{category.name} Hire
+                    p.pt-3.small #{category.description}
+                    button.rounded-pill.border.text-dark.px-5.mt-3 #{category.name} Hire
+                      svg.icon(viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: #888; transform: rotate(-90deg); margin-left: 10px; margin-top: -2px;")
+                        use(xlink:href="/images/icons/icon-arrow-down.svg")
+
+  //- AV Hire Search by product
+  section.py-5(data-theme="dark")
+    .container.my-5.py-5
+
+      //- Section heading
+      header.text-center.mb-5
+        h2.mb-3 Browse by Product
+        p.small Choose from lighting, sound and effects hire for events of all sizes.
+            
+        .row.pt-5.g-4
+
+          //- Sub-Categories
+          each subCategory in subCategories
+            article.col-12.col-md-6.col-xl-4
+              .card.w-100.py-5(style="min-height: 200px;")
+                .card-body.flex-center
+                  .d-block.px-3.text-center
+                    div.flex-center(style="min-height: 110px;")
+                      h3.text-uppercase(style="font-size: 1.6rem; font-weight: 400; letter-spacing: -0.02em;") #{subCategory.name} Hire
+                    p.pt-3.small #{subCategory.description}
+                    button.rounded-pill.px-5.mt-3 #{subCategory.name} Hire
+
+  //- AV Hire Search by brands
+  section.text-dark.py-5(data-theme="light")
+    .container.my-5.py-5
+
+      //- Section heading
+      header.text-center.mb-5
+        h2.mb-3.text-dark Browse by Brand
+        p.small Discover premium audio, lighting and effects brands for live events and productions.
+            
+        .row.pt-5.g-4
+
+          //- Sub-Categories
+          each brand in brands
+            article.col-12.col-md-6.col-xl-4
+              .card.w-100.py-5(style="min-height: 200px;")
+                .card-body.flex-center
+                  .d-block.px-3.text-center
+                    div.flex-center(style="min-height: 110px;")
+                      h3.text-dark.text-uppercase(style="font-size: 1.6rem; font-weight: 400; letter-spacing: -0.02em;") #{brand.name} Hire
+                    p.pt-3.small #{brand.description}
+                    button.rounded-pill.border.text-dark.px-5.mt-3 #{brand.name} Hire
