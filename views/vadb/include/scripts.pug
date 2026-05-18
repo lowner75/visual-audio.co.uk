@@ -1,0 +1,18 @@
+//- views/vadb/include/scripts.pug
+
+//-script(src='/node_modules/jquery/dist/jquery.min.js')
+//-script(src='/node_modules/@popperjs/core/dist/umd/popper.min.js')
+script(src='/js/vendor/bootstrap.min.js')
+//-script(src='/node_modules/gsap/dist/gsap.min.js')
+//-script(src='/node_modules/luxy.js/dist/js/luxy.min.js')
+script(src='/js/theme.js')
+script(src='/js/vadb.js')
+
+//-script(src='/node_modules/@fancyapps/ui/dist/fancybox/fancybox.umd.js')
+  script.
+    Fancybox.bind("[data-fancybox]", {
+      theme: "dark",
+      Thumbs: {
+          type: "none", //- Classic, none, etc. ...
+      },
+    })
