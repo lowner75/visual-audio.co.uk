@@ -3,7 +3,7 @@
 import { openModal, closeModal } from '../../../modules/utils/modal';
 
 type AuthResponse =
-  | { success: true; isAdmin: boolean }
+  | { success: true; isAdmin: boolean, redirectTo?: string  }
   | { success: false; message: string };
 
 export default function initAuthClient() {
@@ -55,7 +55,7 @@ export default function initAuthClient() {
         }
 
         // Redirect based on role
-        window.location.href = "/beta";
+        window.location.href = data.redirectTo ?? "/";
       } catch (err) {
         if (modalText && modalBg && modalWrapper) {
           modalText.textContent = "Something went wrong. Please try again.";
