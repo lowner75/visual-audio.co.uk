@@ -7,7 +7,12 @@ html(lang='en')
   head
     include ../include/head.pug 
 
-  body
+  body(
+    class=typeof bodyClass !== 'undefined' ? bodyClass : ''
+    data-page=typeof bodyPage !== 'undefined' ? bodyPage : null
+    data-scroll="smooth"
+  )
+
 
     //- Preloader
     include ../include/preloader.pug
