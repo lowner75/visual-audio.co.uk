@@ -1,0 +1,56 @@
+// scss/vadb/layouts/_nav-top.scss
+
+.vadb-search-bar {
+  position: relative;
+  width: 100%;
+  .vadb-search-dropdown {
+    position: absolute;
+    top: 54px;
+    left: -16px;
+    min-height: 300px;
+    width: 100%;
+    max-width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    background: #353b42;
+    a:hover {
+      transition: all 0.25s;
+      background: rgba(255,255,255,0.1);
+    }
+  }
+  .vadb-search-dropdown:after {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: 45px;
+    transform: translateY(-50%);
+    border: 8px solid #2a2f34;
+    border-color: transparent transparent #353b42 transparent;
+  }
+  input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    color: rgba(255,255,255,0.6);
+    background: #212529; //- #191927;
+    background-image: url(/img/icon-search.svg);
+    background-position: 17px 10px;
+    background-repeat: no-repeat;
+    background-size: 17px;
+    border-radius: 0.35em;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    transition: all .25s;
+  }
+  input:focus {
+    color: #191927;
+    background: #fff;
+    background-image: url(/img/icon-search.svg);
+    background-position: 17px 10px;
+    background-repeat: no-repeat;
+    background-size: 17px;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+}
